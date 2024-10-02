@@ -3,14 +3,15 @@
 namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2;
 
 use Generator;
-use Muscobytes\TakeAdsApi\Dto\ResponseDto;
-use Psr\Http\Message\ResponseInterface;
+use Muscobytes\TakeAdsApi\Dto\Response;
+use Muscobytes\TakeAdsApi\Interfaces\ResponseInterface;
+use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
 
 /**
  * Get affiliate link
  * https://developers.takeads.com/knowledge-base/article/get-affiliate-link
  */
-class ResolveResponseDto extends ResponseDto
+class ResolveResponse extends Response
 {
     /**
      * @param string $iri Link sent in the request.
@@ -27,10 +28,10 @@ class ResolveResponseDto extends ResponseDto
         //
     }
 
-    public static function fromResponse(ResponseInterface $response): Generator
+    public static function fromResponse(HttpResponseInterface $response): ResponseInterface|Generator
     {
         foreach(json_decode($response->getBody(), true)['data'] as $item) {
-            yield new ResolveResponseDto(...$item);
+            yield new ResolveResponse(...$item);
         }
     }
 }
