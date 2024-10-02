@@ -6,6 +6,7 @@ namespace Muscobytes\TakeadsApi;
 use Generator;
 use Muscobytes\HttpClient\Interface\HttpClientInterface;
 use Muscobytes\HttpClient\Middleware\Authentication\BearerMiddleware;
+use Muscobytes\HttpClient\Middleware\ContentTypeMiddleware;
 use Muscobytes\TakeAdsApi\Dto\RequestDto;
 use Muscobytes\TakeAdsApi\Dto\ResponseDto;
 use Muscobytes\TakeAdsClient\Factory\HttpClientFactory;
@@ -23,7 +24,10 @@ class Client
         if (!$this->client) {
             $this->client = HttpClientFactory::create();
         }
-        $this->middlewares[] = new BearerMiddleware($this->publicKey);
+        $this->middlewares = [
+            new BearerMiddleware($this->publicKey),
+            new ContentTypeMiddleware('application/json')
+        ];
     }
 
 
