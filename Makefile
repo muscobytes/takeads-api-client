@@ -16,4 +16,7 @@ build:
 
 .PHONY: shell
 shell:
-	docker run -ti -v "./:/var/www/html" $(TAG) sh
+	docker run -ti \
+		-v "./:/var/www/html" \
+		-v "./.docker/php-8.3/etc/php.ini:/usr/local/etc/php/php.ini" \
+		$(TAG) sh
