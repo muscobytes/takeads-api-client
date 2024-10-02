@@ -29,7 +29,7 @@ class ResolveResponseDto extends ResponseDto
 
     public static function fromResponse(ResponseInterface $response): Generator
     {
-        foreach(json_decode($response->getBody()) as $item) {
+        foreach(json_decode($response->getBody(), true)['data'] as $item) {
             yield new ResolveResponseDto(...$item);
         }
     }
