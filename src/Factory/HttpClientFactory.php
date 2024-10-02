@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Muscobytes\TakeAdsClient\Factory;
+namespace Muscobytes\TakeadsApi\Factory;
 
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
