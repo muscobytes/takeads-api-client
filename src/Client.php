@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeadsApi;
+namespace Muscobytes\TakeAdsApi;
 
 
 use Generator;
@@ -9,7 +9,7 @@ use Muscobytes\HttpClient\Middleware\Authentication\BearerMiddleware;
 use Muscobytes\HttpClient\Middleware\ContentTypeMiddleware;
 use Muscobytes\TakeAdsApi\Dto\RequestDto;
 use Muscobytes\TakeAdsApi\Dto\ResponseDto;
-use Muscobytes\TakeAdsClient\Factory\HttpClientFactory;
+use Muscobytes\TakeAdsApi\Factory\HttpClientFactory;
 
 class Client
 {
