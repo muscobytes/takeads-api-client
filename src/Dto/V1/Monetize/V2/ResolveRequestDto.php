@@ -17,7 +17,7 @@ class ResolveRequestDto extends RequestDto
 
     /**
      * @param array $iris List of links that you want to affiliate (IRI, RFC 3987).
-     * @param string|null $subId SubID parameter that you would like to add to the affiliate link.
+     * @param string $subId SubID parameter that you would like to add to the affiliate link.
      *      Only one SubID can be sent in each request.
      *      If you are sending several links in one request, the specified SubID will be added to each of them.
      *      SubID format:
@@ -27,7 +27,7 @@ class ResolveRequestDto extends RequestDto
      */
     public function __construct(
         public array   $iris,
-        public ?string $subId = null,
+        public string  $subId = '',
         public bool    $withImages = false
     )
     {
@@ -44,5 +44,15 @@ class ResolveRequestDto extends RequestDto
     public function makeResponseDto(ResponseInterface $response): Generator
     {
         return ResolveResponseDto::fromResponse($response);
+    }
+
+
+    public function toArray(): array
+    {
+        return [
+            'iris'          => $this->iris,
+            'subId'         => $this->subId,
+            'withImages'    => $this->withImages
+        ];
     }
 }
