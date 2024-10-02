@@ -1,5 +1,6 @@
 {
     "name": "muscobytes/takeads-api-client",
+    "version": "0.0.1",
     "type": "library",
     "autoload": {
         "psr-4": {
