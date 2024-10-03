@@ -4,7 +4,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\Coupons;
 
 use Generator;
 use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\HasMeta;
+use Muscobytes\TakeAdsApi\Traits\HasMetaNext;
 
 /**
  * Get coupons
@@ -12,7 +12,7 @@ use Muscobytes\TakeAdsApi\Traits\HasMeta;
  */
 final class CouponsResponse extends Response
 {
-    use HasMeta;
+    use HasMetaNext;
 
     public function getData(): Generator
     {

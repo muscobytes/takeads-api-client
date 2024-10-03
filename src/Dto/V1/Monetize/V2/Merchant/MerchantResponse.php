@@ -4,7 +4,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
 
 use Generator;
 use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\HasMeta;
+use Muscobytes\TakeAdsApi\Traits\HasMetaNext;
 
 /**
  * Get list of merchants
@@ -12,7 +12,7 @@ use Muscobytes\TakeAdsApi\Traits\HasMeta;
  */
 final class MerchantResponse extends Response
 {
-    use HasMeta;
+    use HasMetaNext;
 
     public function getData(): Generator
     {

@@ -5,7 +5,7 @@ namespace Muscobytes\TakeAdsApi\Traits;
 use Muscobytes\TakeAdsApi\Dto\ResponseMetaNext;
 use Muscobytes\TakeAdsApi\Exceptions\ResponseMetaIsMissingException;
 
-trait HasMeta
+trait HasMetaNext
 {
     protected string $key = 'meta';
 
