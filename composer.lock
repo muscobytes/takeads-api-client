@@ -2587,7 +2587,6 @@
     "stability-flags": {
         "psr/http-client": 20,
         "phpunit/phpunit": 20,
-        "php-http/mock-client": 20,
         "nyholm/psr7": 20
     },
     "prefer-stable": false,
