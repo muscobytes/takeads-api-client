@@ -80,6 +80,6 @@ class Client
             throw new UnknownErrorException($response->getReasonPhrase(), $response->getStatusCode());
         }
 
-        return $command->makeResponseDto($response);
+        return $command->makeResponse($response);
     }
 }

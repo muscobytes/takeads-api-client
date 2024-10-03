@@ -2,7 +2,6 @@
 
 namespace Muscobytes\TakeAdsApi\Interfaces;
 
-use Generator;
 use Muscobytes\TakeAdsApi\Dto\Response;
 use Psr\Http\Message\ResponseInterface;
 
@@ -20,5 +19,5 @@ interface RequestInterface
 
     public function getBody(): string;
 
-    public function makeResponseDto(ResponseInterface $response): Response|Generator;
+    public function makeResponse(ResponseInterface $response): Response;
 }

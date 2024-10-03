@@ -23,7 +23,7 @@ class CouponsRequest extends Request
         return $this->parameters->removeNullValues($this->parameters->toArray());
     }
 
-    public function makeResponseDto(ResponseInterface $response): Response
+    public function makeResponse(ResponseInterface $response): Response
     {
         return new CouponsResponse($response);
     }

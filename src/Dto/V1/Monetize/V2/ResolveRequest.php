@@ -28,7 +28,7 @@ class ResolveRequest extends Request
         return json_encode($this->parameters->toArray());
     }
 
-    public function makeResponseDto(HttpResponseInterface $response): Response|Generator
+    public function makeResponse(HttpResponseInterface $response): Response
     {
         return new ResolveResponse($response);
     }
