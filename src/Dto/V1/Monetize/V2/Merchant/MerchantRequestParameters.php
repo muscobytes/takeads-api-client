@@ -8,7 +8,7 @@ use Muscobytes\TakeAdsApi\Dto\RequestParameters;
  * Get list of merchants
  * https://developers.takeads.com/knowledge-base/article/get-list-of-merchants
  */
-readonly class MerchantRequestParameters extends RequestParameters
+final readonly class MerchantRequestParameters extends RequestParameters
 {
     public function __construct(
         public ?string $next = null,
