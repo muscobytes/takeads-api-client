@@ -18,12 +18,6 @@ class CouponsRequest extends Request
     protected string $path = '/v1/product/monetize-api/v1/coupon';
 
 
-    public function getQueryParams(): array
-    {
-        return $this->parameters->removeNullValues(
-            $this->parameters->toArray(transformBoolean: true)
-        );
-    }
 
     public function makeResponse(ResponseInterface $response): Response
     {
