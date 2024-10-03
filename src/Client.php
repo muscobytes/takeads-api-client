@@ -36,16 +36,6 @@ class Client
         $this->client = $client ?: Psr18ClientDiscovery::find();
         $this->requestFactory = $requestFactory ?: Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = $streamFactory ?: Psr17FactoryDiscovery::findStreamFactory();
-
-    }
-
-
-    public function withHeaders(RequestInterface $request, array $headers = []): RequestInterface
-    {
-        foreach ($headers as $key => $value) {
-            $request = $request->withHeader($key, $value);
-        }
-        return $request;
     }
 
 
@@ -67,10 +57,9 @@ class Client
             $uri
         );
 
-        $request = $this->withHeaders(
-            $request,
-            array_merge($this->headers, $command->getHeaders())
-        );
+        foreach (array_merge($this->headers, $command->getHeaders()) as $key => $value) {
+            $request = $request->withHeader($key, $value);
+        }
 
         $request = $request->withBody(
             $this->streamFactory->createStream(
