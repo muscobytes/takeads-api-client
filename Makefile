@@ -19,4 +19,5 @@ shell:
 	docker run -ti \
 		-v "./:/var/www/html" \
 		-v "./.docker/php-8.3/etc/php.ini:/usr/local/etc/php/php.ini" \
+		-e PHP_IDE_CONFIG="serverName=takeads-api-client" \
 		$(TAG) sh
