@@ -21,6 +21,8 @@ use Psr\Http\Message\RequestInterface as HttpRequestInterface;
 
 class Client
 {
+    protected HttpRequestInterface $request;
+
     protected array $headers = [];
 
 
@@ -49,31 +51,35 @@ class Client
 
     public function createRequest(RequestInterface $command): HttpRequestInterface
     {
-        $request = $this->requestFactory->createRequest(
+        $this->request = $this->requestFactory->createRequest(
             $command->getHttpMethod(),
             $this->createUri($command)
         );
-        $request = $this->addHeaders($request, $command);
-        return $this->addBody($request, $command);
+        $this->addHeaders($command);
+        $this->addBody($command);
+        return $this->request;
     }
 
 
-    public function addHeaders(HttpRequestInterface $request, RequestInterface $command): HttpRequestInterface
+    public function addHeaders(RequestInterface $command): self
     {
         foreach (array_merge($this->headers, $command->getHeaders()) as $key => $value) {
-            $request = $request->withHeader($key, $value);
+            $this->request = $this->request->withHeader($key, $value);
         }
-        return $request;
+        return $this;
     }
 
 
-    public function addBody(HttpRequestInterface $request, RequestInterface $command): HttpRequestInterface
+    public function addBody(RequestInterface $command): self
     {
-        return $request->withBody(
-            $this->streamFactory->createStream(
-                $command->getBody()
-            )
-        );
+        if (!empty($command->getBody())) {
+            $this->request->withBody(
+                $this->streamFactory->createStream(
+                    $command->getBody()
+                )
+            );
+        }
+        return $this;
     }
 
 
@@ -85,10 +91,10 @@ class Client
      */
     public function call(RequestInterface $command): Response
     {
-        $request = $this->createRequest($command);
-
         try {
-            $response = $this->client->sendRequest($request);
+            $response = $this->client->sendRequest(
+                $this->createRequest($command)
+            );
         } catch (ClientExceptionInterface $e) {
             throw new ClientErrorException($e->getMessage(), $e->getCode(), $e);
         }
