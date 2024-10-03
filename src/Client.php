@@ -3,7 +3,6 @@
 namespace Muscobytes\TakeAdsApi;
 
 
-use Generator;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Muscobytes\TakeAdsApi\Dto\Response;
@@ -39,13 +38,12 @@ class Client
 
 
     /**
-     * @throws ClientExceptionInterface
      * @throws ServiceUnavailableException
      * @throws ServerErrorException
      * @throws ClientErrorException
      * @throws UnknownErrorException
      */
-    public function call(RequestInterface $command): Response|Generator
+    public function call(RequestInterface $command): Response
     {
         $uri = $this->requestFactory->createUri($this->base_uri)
             ->withPath($command->getUrlPath())
