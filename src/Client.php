@@ -14,9 +14,8 @@ use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use Muscobytes\TakeAdsApi\Interfaces\RequestInterface as CommandInterface;
+use Muscobytes\TakeAdsApi\Interfaces\RequestInterface;
 
 
 class Client
@@ -46,7 +45,7 @@ class Client
      * @throws ClientException
      * @throws UnknownErrorException
      */
-    public function call(CommandInterface $command): Response|Generator
+    public function call(RequestInterface $command): Response|Generator
     {
         $uri = $this->requestFactory->createUri($this->base_uri)
             ->withPath($command->getUrlPath())
