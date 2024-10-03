@@ -1,8 +1,7 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2;
+namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve;
 
-use Generator;
 use Muscobytes\TakeAdsApi\Dto\Request;
 use Muscobytes\TakeAdsApi\Dto\Response;
 use Muscobytes\TakeAdsApi\Traits\Put;

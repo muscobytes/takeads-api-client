@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1;
+namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\Coupons;
 
 use Muscobytes\TakeAdsApi\Dto\RequestParameters;
 
