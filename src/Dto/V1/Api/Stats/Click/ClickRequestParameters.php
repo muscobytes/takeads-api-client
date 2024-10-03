@@ -44,6 +44,6 @@ final readonly class ClickRequestParameters extends RequestParameters
         public ?int $limit = null,
     )
     {
-
+        //
     }
 }
