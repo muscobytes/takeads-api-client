@@ -10,7 +10,7 @@ use Muscobytes\TakeAdsApi\Traits\HasMeta;
  * Get list of merchants
  * https://developers.takeads.com/knowledge-base/article/get-list-of-merchants
  */
-class MerchantResponse extends Response
+final class MerchantResponse extends Response
 {
     use HasMeta;
 
