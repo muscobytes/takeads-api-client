@@ -24,6 +24,9 @@
         }
     },
     "require": {
-        "muscobytes/http-client": "dev-main"
+        "psr/http-client": "^1.0@dev",
+        "psr/http-client-implementation": "*",
+        "psr/http-factory": "^1.1",
+        "psr/http-factory-implementation": "*"
     }
 }

@@ -4,58 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07e92b88caf2520b7547a2659960c408",
+    "content-hash": "13f6aa53f304ba8626938b5b6e3ae524",
     "packages": [
-        {
-            "name": "muscobytes/http-client",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/muscobytes/http-client.git",
-                "reference": "4fbe8298e56c77a8ec2339f4178c74e811e8ee05"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/muscobytes/http-client/zipball/4fbe8298e56c77a8ec2339f4178c74e811e8ee05",
-                "reference": "4fbe8298e56c77a8ec2339f4178c74e811e8ee05",
-                "shasum": ""
-            },
-            "require": {
-                "psr/http-client": "^1.0",
-                "psr/http-client-implementation": "*",
-                "psr/http-factory": "^1.0",
-                "psr/http-factory-implementation": "*"
-            },
-            "require-dev": {
-                "nyholm/psr7": "^1.8",
-                "php-http/httplug": "^2.0",
-                "php-http/mock-client": "^1.5",
-                "phpunit/phpunit": "^10.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Muscobytes\\HttpClient\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Muscobytes",
-                    "email": "dev@muscobyte.com"
-                }
-            ],
-            "description": "A simple HTTP client for building API client wrappers with request middleware support.",
-            "support": {
-                "issues": "https://github.com/muscobytes/http-client/issues",
-                "source": "https://github.com/muscobytes/http-client/tree/v1.3.0"
-            },
-            "time": "2024-02-02T19:58:02+00:00"
-        },
         {
             "name": "php-http/discovery",
             "version": "1.x-dev",
@@ -2635,6 +2585,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "psr/http-client": 20,
         "phpunit/phpunit": 20,
         "php-http/mock-client": 20,
         "nyholm/psr7": 20
