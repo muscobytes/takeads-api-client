@@ -7,7 +7,7 @@ use Generator;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Exceptions\ClientException;
+use Muscobytes\TakeAdsApi\Exceptions\ClientErrorException;
 use Muscobytes\TakeAdsApi\Exceptions\ServerErrorException;
 use Muscobytes\TakeAdsApi\Exceptions\ServiceUnavailableException;
 use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
@@ -42,7 +42,7 @@ class Client
      * @throws ClientExceptionInterface
      * @throws ServiceUnavailableException
      * @throws ServerErrorException
-     * @throws ClientException
+     * @throws ClientErrorException
      * @throws UnknownErrorException
      */
     public function call(RequestInterface $command): Response|Generator
@@ -66,14 +66,18 @@ class Client
             )
         );
 
-        $response = $this->client->sendRequest($request);
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ClientErrorException($e->getMessage(), $e->getCode(), $e);
+        }
 
         if (in_array($response->getStatusCode(), range(501, 511))) {
             throw new ServiceUnavailableException($response->getReasonPhrase(), $response->getStatusCode());
         } elseif ($response->getStatusCode() === 500) {
             throw new ServerErrorException($response->getReasonPhrase(), $response->getStatusCode());
         } elseif (in_array($response->getStatusCode(), range(400, 499))) {
-            throw new ClientException($response->getReasonPhrase(), $response->getStatusCode());
+            throw new ClientErrorException($response->getReasonPhrase(), $response->getStatusCode());
         } elseif (
             !in_array($response->getStatusCode(), [200, 201])
         ) {

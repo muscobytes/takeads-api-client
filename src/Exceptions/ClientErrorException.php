@@ -2,7 +2,7 @@
 
 namespace Muscobytes\TakeAdsApi\Exceptions;
 
-class ClientException extends \Exception
+class ClientErrorException extends \Exception
 {
     //
 }
