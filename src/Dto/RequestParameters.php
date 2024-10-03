@@ -17,8 +17,27 @@ abstract readonly class RequestParameters implements RequestParametersInterface
     }
 
 
-    public function toArray(): array
+    /**
+     * Transforms boolean values into string
+     * @param array $parameters
+     * @return array
+     */
+    public function transformBoolean(array $parameters): array
     {
-        return get_object_vars($this);
+        $result = [];
+        foreach ($parameters as $key => $value) {
+            if (is_bool($value)) {
+                $result[$key] = $value ? 'true' : 'false';
+            } else {
+                $result[$key] = $value;
+            }
+        }
+        return $result;
+    }
+
+
+    public function toArray(bool $transformBoolean = false): array
+    {
+        return $transformBoolean ? $this->transformBoolean(get_object_vars($this)) : get_object_vars($this);
     }
 }

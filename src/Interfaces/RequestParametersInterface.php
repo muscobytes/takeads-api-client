@@ -6,5 +6,5 @@ interface RequestParametersInterface
 {
     public function removeNullValues(array $parameters): array;
 
-    public function toArray(): array;
+    public function toArray(bool $transformBoolean): array;
 }

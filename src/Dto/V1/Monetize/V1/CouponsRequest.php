@@ -20,7 +20,9 @@ class CouponsRequest extends Request
 
     public function getQueryParams(): array
     {
-        return $this->parameters->removeNullValues($this->parameters->toArray());
+        return $this->parameters->removeNullValues(
+            $this->parameters->toArray(transformBoolean: true)
+        );
     }
 
     public function makeResponse(ResponseInterface $response): Response
