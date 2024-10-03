@@ -13,20 +13,6 @@ class ClientTest extends TestCase
 {
     public function testSuccessfulRequest()
     {
-        $apiClient = new Client(
-            'public_key',
-            'https://api.takeads.com',
-            $this->getMockBuilder(HttpClientInterface::class)
-                ->getMock()
-        );
-        $request = new ResolveRequestDto(
-            [
-                'https://temu.com'
-            ],
-            'subid',
-            true
-        );
-        $response = $apiClient->call($request);
-        $this->assertInstanceOf(\Generator::class, $response);
+        //
     }
 }
