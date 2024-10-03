@@ -15,6 +15,8 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Muscobytes\TakeAdsApi\Interfaces\RequestInterface;
+use Psr\Http\Message\UriInterface;
+use Psr\Http\Message\RequestInterface as HttpRequestInterface;
 
 
 class Client
@@ -37,6 +39,44 @@ class Client
     }
 
 
+    public function createUri(RequestInterface $command): UriInterface
+    {
+        return $this->requestFactory->createUri($this->base_uri)
+            ->withPath($command->getUrlPath())
+            ->withQuery(http_build_query($command->getQueryParams()));
+    }
+
+
+    public function createRequest(RequestInterface $command): HttpRequestInterface
+    {
+        $request = $this->requestFactory->createRequest(
+            $command->getHttpMethod(),
+            $this->createUri($command)
+        );
+        $request = $this->addHeaders($request, $command);
+        return $this->addBody($request, $command);
+    }
+
+
+    public function addHeaders(HttpRequestInterface $request, RequestInterface $command): HttpRequestInterface
+    {
+        foreach (array_merge($this->headers, $command->getHeaders()) as $key => $value) {
+            $request = $request->withHeader($key, $value);
+        }
+        return $request;
+    }
+
+
+    public function addBody(HttpRequestInterface $request, RequestInterface $command): HttpRequestInterface
+    {
+        return $request->withBody(
+            $this->streamFactory->createStream(
+                $command->getBody()
+            )
+        );
+    }
+
+
     /**
      * @throws ServiceUnavailableException
      * @throws ServerErrorException
@@ -45,24 +85,7 @@ class Client
      */
     public function call(RequestInterface $command): Response
     {
-        $uri = $this->requestFactory->createUri($this->base_uri)
-            ->withPath($command->getUrlPath())
-            ->withQuery(http_build_query($command->getQueryParams()));
-
-        $request = $this->requestFactory->createRequest(
-            $command->getHttpMethod(),
-            $uri
-        );
-
-        foreach (array_merge($this->headers, $command->getHeaders()) as $key => $value) {
-            $request = $request->withHeader($key, $value);
-        }
-
-        $request = $request->withBody(
-            $this->streamFactory->createStream(
-                $command->getBody()
-            )
-        );
+        $request = $this->createRequest($command);
 
         try {
             $response = $this->client->sendRequest($request);
