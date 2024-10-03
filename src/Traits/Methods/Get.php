@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Traits;
+namespace Muscobytes\TakeAdsApi\Traits\Methods;
 
 trait Get
 {

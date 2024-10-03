@@ -4,7 +4,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
 
 use Muscobytes\TakeAdsApi\Dto\Request;
 use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\Get;
+use Muscobytes\TakeAdsApi\Traits\Methods\Get;
 use Psr\Http\Message\ResponseInterface;
 
 /**
