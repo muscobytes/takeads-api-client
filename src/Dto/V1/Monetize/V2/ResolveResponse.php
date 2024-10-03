@@ -12,9 +12,17 @@ use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
  */
 readonly class ResolveResponse extends Response
 {
-    public static function fromResponse(HttpResponseInterface $response): Generator
+    public function __construct(
+        protected HttpResponseInterface $response
+    )
     {
-        foreach(json_decode($response->getBody(), true)['data'] as $item) {
+        //
+    }
+
+
+    public function getPayload(): Generator
+    {
+        foreach (json_decode($this->response->getBody(), true)['data'] as $item) {
             yield new AffiliateLinkDto(...$item);
         }
     }

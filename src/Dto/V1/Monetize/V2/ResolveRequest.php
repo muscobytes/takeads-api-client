@@ -30,6 +30,6 @@ class ResolveRequest extends Request
 
     public function makeResponseDto(HttpResponseInterface $response): Response|Generator
     {
-        return ResolveResponse::fromResponse($response);
+        return new ResolveResponse($response);
     }
 }
