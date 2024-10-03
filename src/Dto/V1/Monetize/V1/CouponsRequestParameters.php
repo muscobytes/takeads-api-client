@@ -19,8 +19,8 @@ final readonly class CouponsRequestParameters extends RequestParameters
         public ?array $languageCodes = null,
         public ?array $categoryIds = null,
         public ?array $countryCodes = null,
-        public ?array $next = null,
-        public ?array $limit = null
+        public ?string $next = null,
+        public ?int $limit = null
     )
     {
         //
