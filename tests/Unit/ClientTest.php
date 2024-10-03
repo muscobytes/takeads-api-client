@@ -7,6 +7,10 @@ use Muscobytes\TakeAdsApi\Client;
 use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
 use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
 use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveResponse;
+use Muscobytes\TakeAdsApi\Exceptions\ClientErrorException;
+use Muscobytes\TakeAdsApi\Exceptions\ServerErrorException;
+use Muscobytes\TakeAdsApi\Exceptions\ServiceUnavailableException;
+use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Http\Mock\Client as MockClient;
@@ -14,6 +18,12 @@ use Http\Mock\Client as MockClient;
 #[CoversClass(Client::class)]
 class ClientTest extends TestCase
 {
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     */
     public function testSuccessfulRequest()
     {
         $mockHttpClient = new MockClient();
