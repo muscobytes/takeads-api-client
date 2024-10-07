@@ -1,0 +1,25 @@
+{
+  "merchantId": 100001,
+  "name": "mypaper.de",
+  "imageUri": "https://monetizeamex.com/v3/120x60/c9b0578a8f3da224971f35992eb08e99.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "mypaper.de",
+  "domains": [
+    "my-paper.de",
+    "mypaper.de"
+  ],
+  "categoryId": 70,
+  "description": null,
+  "isActive": false,
+  "countryCodes": [],
+  "averageBasketValue": null,
+  "averageCommission": null,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": null,
+  "maximumCommission": null,
+  "commissionRates": [],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0OQX",
+  "createdAt": "2023-12-13T09:32:55.357Z",
+  "updatedAt": "2024-08-15T08:43:30.611Z"
+}
