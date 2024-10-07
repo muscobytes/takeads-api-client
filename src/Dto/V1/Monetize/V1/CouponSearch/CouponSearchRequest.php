@@ -15,6 +15,8 @@ class CouponSearchRequest extends Request
 {
     use Post;
 
+    protected string $path = '/v1/product/monetize-api/v1/coupon/search';
+
     public function makeResponse(ResponseInterface $response): Response
     {
         return new CouponSearchResponse($response);
