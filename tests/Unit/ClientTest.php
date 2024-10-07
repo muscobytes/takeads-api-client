@@ -11,12 +11,12 @@ use Muscobytes\TakeAdsApi\Exceptions\ClientErrorException;
 use Muscobytes\TakeAdsApi\Exceptions\ServerErrorException;
 use Muscobytes\TakeAdsApi\Exceptions\ServiceUnavailableException;
 use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
+use Muscobytes\TakeAdsApi\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Http\Mock\Client as MockClient;
 
 #[CoversClass(Client::class)]
-class ClientTest extends TestCase
+class ClientTest extends BaseTest
 {
     /**
      * @throws ClientErrorException
