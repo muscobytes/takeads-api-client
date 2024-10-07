@@ -6,7 +6,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
  * Get list of merchants
  * https://developers.takeads.com/knowledge-base/article/get-list-of-merchants
  */
-readonly class MerchantDto
+final readonly class MerchantDto
 {
     /**
      * @param int|null $merchantId Merchant unique identifier
@@ -25,10 +25,10 @@ readonly class MerchantDto
      * @param float|null $averageCancellationRate Average rate of cancelled commission.
      * @param float|null $minimumCommission Minimum commission value.
      * @param float|null $maximumCommission Maximum commission value.
-     * @param array $commissionRates List of rewards the publisher can receive from the merchant for each approved
-     *      action. These rates reflect the potential earnings for different types of actions performed by the
-     *      publisher's audience. The exact reward received depends on the actions validated and approved by the
-     *      merchant.
+     * @param array<CommissionRate> $commissionRates List of rewards the publisher can receive from the merchant
+     *      for each approved action. These rates reflect the potential earnings for different types of actions
+     *      performed by the publisher's audience. The exact reward received depends on the actions validated
+     *      and approved by the merchant.
      * @param string $trackingLink Merchant tracking link.
      * @param string $createdAt Timestamp ($ISO 8601) that specifies the date when of the last update of the merchant.
      *      Example: 2021-08-03T19:53:15.816Z
