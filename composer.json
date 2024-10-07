@@ -24,6 +24,7 @@
         }
     },
     "require": {
+        "php": ">=8.3",
         "psr/http-client": "^1.0@dev",
         "psr/http-client-implementation": "*",
         "psr/http-factory": "^1.1",
