@@ -84,6 +84,6 @@ class Api
      */
     public function clicksReport(ClickRequestParameters $parameters): Response
     {
-        $this->client->call(new ClickRequest($parameters));
+        return $this->client->call(new ClickRequest($parameters));
     }
 }
