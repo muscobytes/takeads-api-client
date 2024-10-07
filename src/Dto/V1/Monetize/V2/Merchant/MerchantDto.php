@@ -2,6 +2,10 @@
 
 namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
 
+/**
+ * Get list of merchants
+ * https://developers.takeads.com/knowledge-base/article/get-list-of-merchants
+ */
 readonly class MerchantDto
 {
     /**
