@@ -6,7 +6,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\Coupons;
  * Coupon DTO
  * https://developers.takeads.com/knowledge-base/article/get-coupons
  */
-readonly class CouponDto
+final readonly class CouponDto
 {
     /**
      * @param string $couponId Coupon unique identifier

@@ -1,0 +1,24 @@
+{
+  "merchantId": 100088,
+  "name": "Baur DE",
+  "imageUri": "https://monetizeamex.com/v3/120x60/69356d993d5d8c0b3760903b957f87f1.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "baur.de",
+  "domains": [
+    "baur.de"
+  ],
+  "categoryId": 40,
+  "description": "Ill➤ ❗ 20% Rabatt ❗ auf Mode, Schuhe & Wohnen bis 23.07. ❗ Kauf auf Rechnung & Raten ▷ PAYBACK Punkte ✅ Neukunden-Rabatt + Gratis Versand ✅",
+  "isActive": false,
+  "countryCodes": [],
+  "averageBasketValue": null,
+  "averageCommission": null,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": 1.06,
+  "maximumCommission": 1.06,
+  "commissionRates": [],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0ORu",
+  "createdAt": "2023-12-13T09:33:17.326Z",
+  "updatedAt": "2024-10-07T05:47:59.104Z"
+}

@@ -1,0 +1,31 @@
+{
+  "merchantId": 100003,
+  "name": "Porzellantreff DE",
+  "imageUri": "https://monetizeamex.com/v3/120x60/71aac9cdabd589d9dcadd00de9058a24.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "porzellantreff.de",
+  "domains": [
+    "porzellantreff.de"
+  ],
+  "categoryId": 21,
+  "description": null,
+  "isActive": true,
+  "countryCodes": [
+    "DE"
+  ],
+  "averageBasketValue": 205.24,
+  "averageCommission": 4.92,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": 0.66,
+  "maximumCommission": 10.24,
+  "commissionRates": [
+    {
+      "fixedCommission": null,
+      "percentageCommission": 2.4
+    }
+  ],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0OQZ",
+  "createdAt": "2023-12-13T09:32:55.785Z",
+  "updatedAt": "2024-10-04T16:03:09.123Z"
+}

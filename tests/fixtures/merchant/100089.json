@@ -1,0 +1,48 @@
+{
+  "merchantId": 100089,
+  "name": "Herrenausstatter DE",
+  "imageUri": "https://monetizeamex.com/v3/120x60/6e501ceac47db4bc7ea756268163bd70.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "herrenausstatter.de",
+  "domains": [
+    "herrenausstater.de",
+    "herren-ausstatter.de",
+    "herrenausstatter.de",
+    "herrenaustater.de",
+    "herrenaustatter.de"
+  ],
+  "categoryId": 40,
+  "description": null,
+  "isActive": true,
+  "countryCodes": [
+    "AT",
+    "DE"
+  ],
+  "averageBasketValue": 169.23,
+  "averageCommission": 4.44,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": 7.6,
+  "minimumCommission": 0.31,
+  "maximumCommission": 21.99,
+  "commissionRates": [
+    {
+      "fixedCommission": null,
+      "percentageCommission": 1.7999999999999998
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 3.5999999999999996
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 6
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 7.199999999999999
+    }
+  ],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0ORv",
+  "createdAt": "2023-12-13T09:33:17.622Z",
+  "updatedAt": "2024-10-07T05:59:05.195Z"
+}

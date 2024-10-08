@@ -1,0 +1,33 @@
+{
+  "merchantId": 100104,
+  "name": "SWAROVSKI",
+  "imageUri": "https://monetizeamex.com/v3/120x60/30607510e6b3e62d2a2b566129b152b4.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "swarovski.com",
+  "domains": [
+    "swarovski.com"
+  ],
+  "categoryId": 73,
+  "description": null,
+  "isActive": true,
+  "countryCodes": [],
+  "averageBasketValue": 131.11,
+  "averageCommission": 3.43,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": 1.6,
+  "minimumCommission": 0.28,
+  "maximumCommission": 10.5,
+  "commissionRates": [
+    {
+      "fixedCommission": null,
+      "percentageCommission": 2.4
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 1.44
+    }
+  ],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0OS8",
+  "createdAt": "2023-12-13T09:33:21.770Z",
+  "updatedAt": "2024-10-07T05:57:00.984Z"
+}

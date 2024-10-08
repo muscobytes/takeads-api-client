@@ -1,0 +1,25 @@
+{
+  "merchantId": 100096,
+  "name": "Thomas Cook Online Reisebüro",
+  "imageUri": "https://monetizeamex.com/v3/120x60/db9d3a3de6ad037d6ce655c8d26ad8cf.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "thomascook.de",
+  "domains": [
+    "thomas-cook.de",
+    "thomascook.de"
+  ],
+  "categoryId": 46,
+  "description": null,
+  "isActive": false,
+  "countryCodes": [],
+  "averageBasketValue": null,
+  "averageCommission": null,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": null,
+  "maximumCommission": null,
+  "commissionRates": [],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0OS0",
+  "createdAt": "2023-12-13T09:33:19.224Z",
+  "updatedAt": "2024-08-15T08:43:35.401Z"
+}

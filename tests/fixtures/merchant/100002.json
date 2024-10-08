@@ -1,0 +1,25 @@
+{
+  "merchantId": 100002,
+  "name": "zanox DE",
+  "imageUri": "https://monetizeamex.com/v3/120x60/afb2d65e7e2fef76fca9c364859970a4.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "zanox.de",
+  "domains": [
+    "zanox.com",
+    "zanox.de"
+  ],
+  "categoryId": 63,
+  "description": "Word lid van ons internationale affiliate netwerk om in contact te komen met consumenten wereldwijd en geld te verdienen met online content.",
+  "isActive": false,
+  "countryCodes": [],
+  "averageBasketValue": null,
+  "averageCommission": null,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": null,
+  "maximumCommission": null,
+  "commissionRates": [],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0OQY",
+  "createdAt": "2023-12-13T09:32:55.623Z",
+  "updatedAt": "2024-10-03T05:01:08.392Z"
+}

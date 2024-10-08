@@ -1,6 +1,6 @@
 {
     "name": "muscobytes/takeads-api-client",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -24,6 +24,7 @@
         }
     },
     "require": {
+        "php": ">=8.3",
         "psr/http-client": "^1.0@dev",
         "psr/http-client-implementation": "*",
         "psr/http-factory": "^1.1",

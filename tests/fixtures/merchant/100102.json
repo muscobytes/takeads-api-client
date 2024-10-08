@@ -1,0 +1,37 @@
+{
+  "merchantId": 100102,
+  "name": "Otto AT",
+  "imageUri": "https://monetizeamex.com/v3/120x60/1193f2e0d5401d62e504e3d1a5d763fc.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "ottoversand.at",
+  "domains": [
+    "otto.at",
+    "otto-versand.at",
+    "ottoversand.at"
+  ],
+  "categoryId": 50,
+  "description": null,
+  "isActive": true,
+  "countryCodes": [
+    "AT"
+  ],
+  "averageBasketValue": 183.04,
+  "averageCommission": 5.42,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": 0.9,
+  "minimumCommission": 0.3,
+  "maximumCommission": 69.64,
+  "commissionRates": [
+    {
+      "fixedCommission": null,
+      "percentageCommission": 3.5999999999999996
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 1.2
+    }
+  ],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0OS6",
+  "createdAt": "2023-12-13T09:33:21.223Z",
+  "updatedAt": "2024-10-07T05:52:43.081Z"
+}

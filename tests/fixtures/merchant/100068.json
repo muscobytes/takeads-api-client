@@ -1,0 +1,28 @@
+{
+  "merchantId": 100068,
+  "name": "Tchibo CH",
+  "imageUri": "https://monetizeamex.com/v3/120x60/63fed4b230405da05c4f5cf771613c9e.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "fr.tchibo.ch",
+  "domains": [
+    "fr.tchibo.ch",
+    "tchibo.ch",
+    "tchipo.ch",
+    "tschibo.ch",
+    "tschipo.ch"
+  ],
+  "categoryId": null,
+  "description": null,
+  "isActive": false,
+  "countryCodes": [],
+  "averageBasketValue": null,
+  "averageCommission": null,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": 1.11,
+  "maximumCommission": 1.11,
+  "commissionRates": [],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0ORa",
+  "createdAt": "2023-12-13T09:33:12.322Z",
+  "updatedAt": "2024-09-25T05:42:01.262Z"
+}

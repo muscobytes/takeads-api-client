@@ -2,8 +2,17 @@
 
 namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
 
-readonly class MerchantDto
+use DateTimeInterface;
+use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
+
+/**
+ * Get list of merchants
+ * https://developers.takeads.com/knowledge-base/article/get-list-of-merchants
+ */
+final readonly class MerchantDto
 {
+    use CastDatetime;
+
     /**
      * @param int|null $merchantId Merchant unique identifier
      * @param string $name Merchant name
@@ -21,14 +30,14 @@ readonly class MerchantDto
      * @param float|null $averageCancellationRate Average rate of cancelled commission.
      * @param float|null $minimumCommission Minimum commission value.
      * @param float|null $maximumCommission Maximum commission value.
-     * @param array $commissionRates List of rewards the publisher can receive from the merchant for each approved
-     *      action. These rates reflect the potential earnings for different types of actions performed by the
-     *      publisher's audience. The exact reward received depends on the actions validated and approved by the
-     *      merchant.
+     * @param array<CommissionRate> $commissionRates List of rewards the publisher can receive from the merchant
+     *      for each approved action. These rates reflect the potential earnings for different types of actions
+     *      performed by the publisher's audience. The exact reward received depends on the actions validated
+     *      and approved by the merchant.
      * @param string $trackingLink Merchant tracking link.
-     * @param string $createdAt Timestamp ($ISO 8601) that specifies the date when of the last update of the merchant.
+     * @param DateTimeInterface $createdAt Timestamp ($ISO 8601) that specifies the date when of the last update of the merchant.
      *      Example: 2021-08-03T19:53:15.816Z
-     * @param string $updatedAt Timestamp ($ISO 8601) when information about the merchant was last updated in the Takeads catalog.
+     * @param DateTimeInterface $updatedAt Timestamp ($ISO 8601) when information about the merchant was last updated in the Takeads catalog.
      *      Example: 2021-08-03T19:53:15.816Z
      */
     public function __construct(
@@ -50,10 +59,45 @@ readonly class MerchantDto
         public ?float $maximumCommission,
         public array $commissionRates,
         public string $trackingLink,
-        public string $createdAt,
-        public string $updatedAt,
+        public DateTimeInterface $createdAt,
+        public DateTimeInterface $updatedAt,
     )
     {
         //
+    }
+
+
+    protected static function castComissionRates(array $rates): array
+    {
+        return array_map(function($rate){
+            return new CommissionRate(...$rate);
+        }, $rates);
+    }
+
+
+    public static function fromArray(array $array): MerchantDto
+    {
+        return new MerchantDto(
+            merchantId: $array['merchantId'],
+            name: $array['name'],
+            imageUri: $array['imageUri'],
+            currencyCode: $array['currencyCode'],
+            defaultDomain: $array['defaultDomain'],
+            domains: $array['domains'],
+            categoryId: $array['categoryId'],
+            description: $array['description'],
+            isActive: $array['isActive'],
+            countryCodes: $array['countryCodes'],
+            averageBasketValue: $array['averageBasketValue'],
+            averageCommission: $array['averageCommission'],
+            averageConfirmationTime: $array['averageConfirmationTime'],
+            averageCancellationRate: $array['averageCancellationRate'],
+            minimumCommission: $array['minimumCommission'],
+            maximumCommission: $array['maximumCommission'],
+            commissionRates: self::castComissionRates($array['commissionRates']),
+            trackingLink: $array['trackingLink'],
+            createdAt: self::castDatetime($array['createdAt']),
+            updatedAt: self::castDatetime($array['updatedAt']),
+        );
     }
 }

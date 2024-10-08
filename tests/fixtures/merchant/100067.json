@@ -1,0 +1,25 @@
+{
+  "merchantId": 100067,
+  "name": "dress-for-less AT",
+  "imageUri": "https://monetizeamex.com/v3/120x60/7991e9c40bd9b2edd394b4da3acf8c2e.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "dress-for-less.at",
+  "domains": [
+    "dress-for-less.at",
+    "dressforless.at"
+  ],
+  "categoryId": 40,
+  "description": "Entdecke günstige Mode von tollen Marken im Outlet von dressforless. Reduzierungen bis 70% ✓ Blitzschnelle Lieferung ✓ Kostenlose Retoure",
+  "isActive": false,
+  "countryCodes": [],
+  "averageBasketValue": null,
+  "averageCommission": null,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": null,
+  "maximumCommission": null,
+  "commissionRates": [],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0ORZ",
+  "createdAt": "2023-12-13T09:33:11.933Z",
+  "updatedAt": "2024-08-15T08:43:30.945Z"
+}

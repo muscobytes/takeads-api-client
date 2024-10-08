@@ -6,7 +6,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
  * Get report on clicks
  * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
  */
-readonly class ClickDto
+final readonly class ClickDto
 {
     /**
      * @param int $id Click item ID.
@@ -17,7 +17,7 @@ readonly class ClickDto
      * @param string $subId SubID of the deeplink you received the report for.
      * @param string $date Date when clicks in the click item were performed. Example: 2021-08-03
      * @param int $count Number of clicks in the click item.
-     * @param string $productId ID of the Takeads product. Possible values:
+     * @param ProductIdEnum $productId ID of the Takeads product. Possible values:
      *      - MONETIZE_LINK_SCRIPT,
      *      - MONETIZE_LINK_API,
      *      - MONETIZE_API,
@@ -35,7 +35,7 @@ readonly class ClickDto
         public string $subId,
         public string $date,
         public int $count,
-        public string $productId,
+        public ProductIdEnum $productId,
         public string $updatedAt
     )
     {

@@ -1,0 +1,28 @@
+{
+  "merchantId": 100093,
+  "name": "Douglas DE",
+  "imageUri": "https://monetizeamex.com/v3/120x60/ec4d1c5235189d5534ed9fb34b3ccc66.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "douglas.de",
+  "domains": [
+    "douglas.de",
+    "douglas.eu",
+    "douglas.tv",
+    "duglas.de",
+    "mydouglas.de"
+  ],
+  "categoryId": 27,
+  "description": "Online-Parfümerie DOUGLAS ❤️ Beauty-Trends ❤️ Versandkostenfrei ab 29,95 € ✓ Gratis-Proben ✓ Über 2.000 TOP-Marken ➽ DOUGLAS!",
+  "isActive": false,
+  "countryCodes": [],
+  "averageBasketValue": null,
+  "averageCommission": null,
+  "averageConfirmationTime": null,
+  "averageCancellationRate": null,
+  "minimumCommission": null,
+  "maximumCommission": null,
+  "commissionRates": [],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0ORz",
+  "createdAt": "2023-12-13T09:33:18.525Z",
+  "updatedAt": "2024-09-14T05:29:02.563Z"
+}

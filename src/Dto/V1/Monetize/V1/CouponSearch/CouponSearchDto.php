@@ -2,7 +2,11 @@
 
 namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\CouponSearch;
 
-readonly class CouponSearchDto
+/**
+ * Search for coupons
+ * https://developers.takeads.com/knowledge-base/article/search-for-coupons
+ */
+final readonly class CouponSearchDto
 {
     /**
      * @param string $iri Link sent in the request.
