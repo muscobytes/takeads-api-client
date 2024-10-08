@@ -6,12 +6,12 @@ This package provides PSR-7/18 compliant Takeads API client with convenient DTOs
 - [Collection](https://github.com/muscobytes/takeads-api-bruno-collection) for [Bruno](https://www.usebruno.com/)
 - [Laravel service provider](https://github.com/muscobytes/laravel-takeads-api)
 
-## Getting started
+## 🚀 Getting started
 
-### Prerequisites
+### 📋 Prerequisites
 * Install package by running:
 ```
 composer require muscobytes/takeads-api-client
 ```
 
-### Usage
+### 👨‍💻 Usage
