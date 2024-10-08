@@ -1,0 +1,69 @@
+{
+  "merchantId": 100125,
+  "name": "L TUR DE",
+  "imageUri": "https://monetizeamex.com/v3/120x60/207b4a42e43f7de2f0d83fe10359c416.png",
+  "currencyCode": "EUR",
+  "defaultDomain": "ltur.com",
+  "domains": [
+    "l-tur.com",
+    "ltur.com",
+    "l-tur.de",
+    "ltur.de"
+  ],
+  "categoryId": 63,
+  "description": "Jetzt Urlaub buchen und günstig verreisen ☀ Top Urlaubsangebote zu Pauschalreisen ✓ Last Minute ✓ Frühbucher ✓ und mehr! | ltur",
+  "isActive": true,
+  "countryCodes": [
+    "FR",
+    "CH",
+    "DE",
+    "AT"
+  ],
+  "averageBasketValue": 2,
+  "averageCommission": 70.99,
+  "averageConfirmationTime": 12,
+  "averageCancellationRate": null,
+  "minimumCommission": 18,
+  "maximumCommission": 70.44,
+  "commissionRates": [
+    {
+      "fixedCommission": null,
+      "percentageCommission": 3
+    },
+    {
+      "fixedCommission": 4.8,
+      "percentageCommission": null
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 3.5999999999999996
+    },
+    {
+      "fixedCommission": 4.8,
+      "percentageCommission": null
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 4.8
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 3
+    },
+    {
+      "fixedCommission": 4.8,
+      "percentageCommission": null
+    },
+    {
+      "fixedCommission": null,
+      "percentageCommission": 3
+    },
+    {
+      "fixedCommission": 4.8,
+      "percentageCommission": null
+    }
+  ],
+  "trackingLink": "https://tatrck.com/h/0Hu30zXq0OST",
+  "createdAt": "2023-12-13T09:33:26.670Z",
+  "updatedAt": "2024-10-07T13:06:36.899Z"
+}
