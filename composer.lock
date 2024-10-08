@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98721799d6ab1daa87844ecfb279ed69",
+    "content-hash": "e802d155d8e0a9f4114f9808f7c29bec",
     "packages": [
         {
             "name": "php-http/discovery",
@@ -2948,7 +2948,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "nyholm/psr7": 20,
-        "php-http/mock-client": 20,
         "phpunit/phpunit": 20,
         "symfony/http-client": 20
     },
