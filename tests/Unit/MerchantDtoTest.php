@@ -13,66 +13,69 @@ use PHPUnit\Framework\Attributes\DataProvider;
 class MerchantDtoTest extends BaseTest
 {
     #[DataProvider('merchantDataProvider')]
-    public function testDtoCreatesProperly(array $merchant)
+    public function testDtoCreatesProperly(array $entry)
     {
-        $dto = MerchantDto::fromArray($merchant);
+        $dto = MerchantDto::fromArray($entry);
         $this->assertInstanceOf(MerchantDto::class, $dto);
 
         $this->assertIsInt($dto->merchantId);
-        $this->assertSame($merchant['merchantId'], $dto->merchantId);
+        $this->assertSame($entry['merchantId'], $dto->merchantId);
 
         $this->assertIsString($dto->name);
-        $this->assertSame($merchant['name'], $dto->name);
+        $this->assertSame($entry['name'], $dto->name);
 
-        $this->assertSame($merchant['imageUri'], $dto->imageUri);
+        $this->assertSame($entry['imageUri'], $dto->imageUri);
 
         $this->assertIsString($dto->currencyCode);
-        $this->assertSame($merchant['currencyCode'], $dto->currencyCode);
+        $this->assertSame($entry['currencyCode'], $dto->currencyCode);
 
         $this->assertIsString($dto->defaultDomain);
-        $this->assertSame($merchant['defaultDomain'], $dto->defaultDomain);
+        $this->assertSame($entry['defaultDomain'], $dto->defaultDomain);
 
         $this->assertIsArray($dto->domains);
-        $this->assertSame($merchant['domains'], $dto->domains);
+        $this->assertSame($entry['domains'], $dto->domains);
+        foreach ($entry['domains'] as $domain) {
+            $this->assertIsString($domain);
+    }
 
-        $this->assertSame($merchant['categoryId'], $dto->categoryId);
+        $this->assertSame($entry['categoryId'], $dto->categoryId);
 
-        $this->assertSame($merchant['description'], $dto->description);
+        $this->assertSame($entry['description'], $dto->description);
 
         $this->assertIsBool($dto->isActive);
-        $this->assertSame($merchant['isActive'], $dto->isActive);
+        $this->assertSame($entry['isActive'], $dto->isActive);
 
         $this->assertIsArray($dto->countryCodes);
-        $this->assertSame($merchant['countryCodes'], $dto->countryCodes);
+        $this->assertSame($entry['countryCodes'], $dto->countryCodes);
 
-        if (!is_null($merchant['averageBasketValue'])) {
+        if (!is_null($entry['averageBasketValue'])) {
             $this->assertIsFloat($dto->averageBasketValue);
-            $this->assertSame((float)$merchant['averageBasketValue'], $dto->averageBasketValue);
+            $this->assertSame((float)$entry['averageBasketValue'], $dto->averageBasketValue);
         }
 
-        if(!is_null($merchant['averageCommission'])) {
+        if(!is_null($entry['averageCommission'])) {
             $this->assertIsFloat($dto->averageCommission);
-            $this->assertSame((float)$merchant['averageCommission'], $dto->averageCommission);
+            $this->assertSame((float)$entry['averageCommission'], $dto->averageCommission);
         }
 
-        if(!is_null($merchant['averageConfirmationTime'])) {
+        if(!is_null($entry['averageConfirmationTime'])) {
             $this->assertIsFloat($dto->averageConfirmationTime);
-            $this->assertSame((float)$merchant['averageConfirmationTime'], $dto->averageConfirmationTime);
+            $this->assertSame((float)$entry['averageConfirmationTime'], $dto->averageConfirmationTime);
         }
 
-        if(!is_null($merchant['averageCancellationRate'])) {
+        if(!is_null($entry['averageCancellationRate'])) {
             $this->assertIsFloat($dto->averageCancellationRate);
-            $this->assertSame((float)$merchant['averageCancellationRate'], $dto->averageCancellationRate);
+            $this->assertSame((float)$entry['averageCancellationRate'], $dto->averageCancellationRate);
         }
 
-        if(!is_null($merchant['minimumCommission'])) {
+        if(!is_null($entry['minimumCommission'])) {
             $this->assertIsFloat($dto->minimumCommission);
-            $this->assertSame((float)$merchant['minimumCommission'], $dto->minimumCommission);
+            $this->assertSame((float)$entry['minimumCommission'], $dto->minimumCommission);
         }
 
-        if(!is_null($merchant['maximumCommission'])) {
+        if(!is_null($entry['maximumCommission'])) {
             $this->assertIsFloat($dto->maximumCommission);
-            $this->assertSame($merchant['maximumCommission'], $dto->maximumCommission);
+            $this->assertSame($entry['maximumCommission'], $dto->maximumCommission);
         }
 
         $this->assertIsArray($dto->commissionRates);
@@ -82,7 +85,7 @@ class MerchantDtoTest extends BaseTest
             if (!is_null($commissionRate->fixedCommission)) {
                 $this->assertIsFloat($commissionRate->fixedCommission);
                 $this->assertSame(
-                    (float)$merchant['commissionRates'][$key]['fixedCommission'],
+                    (float)$entry['commissionRates'][$key]['fixedCommission'],
                     $commissionRate->fixedCommission
                 );
             }
@@ -90,24 +93,24 @@ class MerchantDtoTest extends BaseTest
             if (!is_null($commissionRate->percentageCommission)) {
                 $this->assertIsFloat($commissionRate->percentageCommission);
                 $this->assertSame(
-                    (float)$merchant['commissionRates'][$key]['percentageCommission'],
+                    (float)$entry['commissionRates'][$key]['percentageCommission'],
                     $commissionRate->percentageCommission
                 );
             }
         }
 
         $this->assertIsString($dto->trackingLink);
-        $this->assertSame($merchant['trackingLink'], $dto->trackingLink);
+        $this->assertSame($entry['trackingLink'], $dto->trackingLink);
 
         $this->assertInstanceOf(DateTimeInterface::class, $dto->createdAt);
         $this->assertSame(
-            $merchant['createdAt'],
+            $entry['createdAt'],
             $dto->createdAt->format(MerchantDto::DATE_FORMAT)
         );
 
         $this->assertInstanceOf(DateTimeInterface::class, $dto->updatedAt);
         $this->assertSame(
-            $merchant['updatedAt'],
+            $entry['updatedAt'],
             $dto->updatedAt->format(MerchantDto::DATE_FORMAT)
         );
     }
