@@ -9,12 +9,12 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
 final readonly class CommissionRate
 {
     /**
-     * @param int|null $fixedCommission Set amount paid per transaction or lead.
-     * @param int|null $percentageCommission Percentage of the total sale amount paid per transaction.
+     * @param float|null $fixedCommission Set amount paid per transaction or lead.
+     * @param float|null $percentageCommission Percentage of the total sale amount paid per transaction.
      */
     public function __construct(
-        public ?int $fixedCommission,
-        public ?int $percentageCommission
+        public ?float $fixedCommission,
+        public ?float $percentageCommission
     )
     {
         //

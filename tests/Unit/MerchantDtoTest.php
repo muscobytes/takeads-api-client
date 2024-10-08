@@ -2,6 +2,8 @@
 
 namespace Muscobytes\TakeAdsApi\Tests\Unit;
 
+use DateTimeInterface;
+use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant\CommissionRate;
 use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant\MerchantDto;
 use Muscobytes\TakeAdsApi\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -13,7 +15,7 @@ class MerchantDtoTest extends BaseTest
     #[DataProvider('merchantDataProvider')]
     public function testDtoCreatesProperly(array $merchant)
     {
-        $dto = new MerchantDto(...$merchant);
+        $dto = MerchantDto::fromArray($merchant);
         $this->assertInstanceOf(MerchantDto::class, $dto);
 
         $this->assertIsInt($dto->merchantId);
@@ -74,16 +76,40 @@ class MerchantDtoTest extends BaseTest
         }
 
         $this->assertIsArray($dto->commissionRates);
-        $this->assertSame($merchant['commissionRates'], $dto->commissionRates);
+        foreach ($dto->commissionRates as $key => $commissionRate) {
+            $this->assertInstanceOf(CommissionRate::class, $commissionRate);
+
+            if (!is_null($commissionRate->fixedCommission)) {
+                $this->assertIsFloat($commissionRate->fixedCommission);
+                $this->assertSame(
+                    (float)$merchant['commissionRates'][$key]['fixedCommission'],
+                    $commissionRate->fixedCommission
+                );
+            }
+
+            if (!is_null($commissionRate->percentageCommission)) {
+                $this->assertIsFloat($commissionRate->percentageCommission);
+                $this->assertSame(
+                    (float)$merchant['commissionRates'][$key]['percentageCommission'],
+                    $commissionRate->percentageCommission
+                );
+            }
+        }
 
         $this->assertIsString($dto->trackingLink);
         $this->assertSame($merchant['trackingLink'], $dto->trackingLink);
 
-        $this->assertIsString($dto->createdAt);
-        $this->assertSame($merchant['createdAt'], $dto->createdAt);
+        $this->assertInstanceOf(DateTimeInterface::class, $dto->createdAt);
+        $this->assertSame(
+            $merchant['createdAt'],
+            $dto->createdAt->format(MerchantDto::DATE_FORMAT)
+        );
 
-        $this->assertIsString($dto->updatedAt);
-        $this->assertSame($merchant['updatedAt'], $dto->updatedAt);
+        $this->assertInstanceOf(DateTimeInterface::class, $dto->updatedAt);
+        $this->assertSame(
+            $merchant['updatedAt'],
+            $dto->updatedAt->format(MerchantDto::DATE_FORMAT)
+        );
     }
 
 
