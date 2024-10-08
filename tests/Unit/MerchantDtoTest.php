@@ -115,16 +115,8 @@ class MerchantDtoTest extends BaseTest
 
     public static function merchantDataProvider(): array
     {
-        $result = [];
-        $fixturesPath = __DIR__ . '/../fixtures/merchant/';
-        if ($handle = opendir($fixturesPath)) {
-            while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != "..") {
-                    $result[]['merchant'] = json_decode(file_get_contents($fixturesPath . $entry), true);
-                }
-            }
-            closedir($handle);
-        }
-        return $result;
+        return self::loadFixtures(
+            folder: 'merchant'
+        );
     }
 }
