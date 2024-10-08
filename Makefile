@@ -24,6 +24,10 @@ shell:
 test:
 	$(DOCKER_RUN) $(TAG) vendor/bin/phpunit
 
-.PHONY: bump
-bump:
+.PHONY: tag
+tag:
 	git tag $(shell cat ./composer.json | jq -r .version)
+
+.PHONY: untag
+untag:
+	git tag -d $(shell cat ./composer.json | jq -r .version)
