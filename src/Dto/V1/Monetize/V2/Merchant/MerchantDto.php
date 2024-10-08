@@ -2,8 +2,8 @@
 
 namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
 
-use DateTime;
 use DateTimeInterface;
+use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
 
 /**
  * Get list of merchants
@@ -11,8 +11,7 @@ use DateTimeInterface;
  */
 final readonly class MerchantDto
 {
-    const string DATE_FORMAT = 'Y-m-d\TH:i:s.vp';
-
+    use CastDatetime;
 
     /**
      * @param int|null $merchantId Merchant unique identifier
@@ -73,12 +72,6 @@ final readonly class MerchantDto
         return array_map(function($rate){
             return new CommissionRate(...$rate);
         }, $rates);
-    }
-
-
-    protected static function castDatetime(string $timestamp): DateTimeInterface
-    {
-        return DateTime::createFromFormat(self::DATE_FORMAT, $timestamp);
     }
 
 
