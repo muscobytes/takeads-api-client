@@ -3,7 +3,9 @@
 
 TAG := muscobytes/php-cli-8.3
 
-DOCKER := docker -f ".docker/php-8.3/Dockerfile"
+DOCKER_RUN := docker run -ti \
+				-v "./:/var/www/html" \
+				-v "./.docker/php-8.3/etc/php.ini:/usr/local/etc/php/php.ini"
 
 .PHONY: help
 help:  ## Shows this help message
@@ -16,15 +18,12 @@ build:
 
 .PHONY: shell
 shell:
-	docker run -ti \
-		-v "./:/var/www/html" \
-		-v "./.docker/php-8.3/etc/php.ini:/usr/local/etc/php/php.ini" \
-		-e PHP_IDE_CONFIG="serverName=takeads-api-client" \
-		$(TAG) sh
+	$(DOCKER_RUN) -e PHP_IDE_CONFIG="serverName=takeads-api-client" $(TAG) sh
 
 .PHONY: test
 test:
-	docker run -ti \
-		-v "./:/var/www/html" \
-		-v "./.docker/php-8.3/etc/php.ini:/usr/local/etc/php/php.ini" \
-		$(TAG) vendor/bin/phpunit
+	$(DOCKER_RUN) $(TAG) vendor/bin/phpunit
+
+.PHONY: bump
+bump:
+	git tag $(shell cat ./composer.json | jq -r .version)
