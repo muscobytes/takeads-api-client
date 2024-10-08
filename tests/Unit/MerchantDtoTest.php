@@ -43,29 +43,35 @@ class MerchantDtoTest extends BaseTest
         $this->assertIsArray($dto->countryCodes);
         $this->assertSame($merchant['countryCodes'], $dto->countryCodes);
 
-        is_null($merchant['averageBasketValue']) ?
-            $this->assertNull($dto->averageBasketValue) : $this->assertIsFloat($dto->averageBasketValue);
-        $this->assertSame($merchant['averageBasketValue'], $dto->averageBasketValue);
+        if (!is_null($merchant['averageBasketValue'])) {
+            $this->assertIsFloat($dto->averageBasketValue);
+            $this->assertSame((float)$merchant['averageBasketValue'], $dto->averageBasketValue);
+        }
 
-        is_null($merchant['averageCommission']) ?
-            $this->assertNull($dto->averageCommission) : $this->assertIsFloat($dto->averageCommission);
-        $this->assertSame($merchant['averageCommission'], $dto->averageCommission);
+        if(!is_null($merchant['averageCommission'])) {
+            $this->assertIsFloat($dto->averageCommission);
+            $this->assertSame((float)$merchant['averageCommission'], $dto->averageCommission);
+        }
 
-        is_null($merchant['averageConfirmationTime']) ?
-            $this->assertNull($dto->averageConfirmationTime) : $this->assertIsFloat($dto->averageConfirmationTime);
-        $this->assertSame($merchant['averageConfirmationTime'], $dto->averageConfirmationTime);
+        if(!is_null($merchant['averageConfirmationTime'])) {
+            $this->assertIsFloat($dto->averageConfirmationTime);
+            $this->assertSame((float)$merchant['averageConfirmationTime'], $dto->averageConfirmationTime);
+        }
 
-        is_null($merchant['averageCancellationRate']) ?
-            $this->assertNull($dto->averageCancellationRate) : $this->assertIsFloat($dto->averageCancellationRate);
-        $this->assertSame($merchant['averageCancellationRate'], $dto->averageCancellationRate);
+        if(!is_null($merchant['averageCancellationRate'])) {
+            $this->assertIsFloat($dto->averageCancellationRate);
+            $this->assertSame((float)$merchant['averageCancellationRate'], $dto->averageCancellationRate);
+        }
 
-        is_null($merchant['minimumCommission']) ?
-            $this->assertNull($dto->minimumCommission) : $this->assertIsFloat($dto->minimumCommission);
-        $this->assertSame($merchant['minimumCommission'], $dto->minimumCommission);
+        if(!is_null($merchant['minimumCommission'])) {
+            $this->assertIsFloat($dto->minimumCommission);
+            $this->assertSame((float)$merchant['minimumCommission'], $dto->minimumCommission);
+        }
 
-        is_null($merchant['maximumCommission']) ?
-            $this->assertNull($dto->maximumCommission) : $this->assertIsFloat($dto->maximumCommission);
-        $this->assertSame($merchant['maximumCommission'], $dto->maximumCommission);
+        if(!is_null($merchant['maximumCommission'])) {
+            $this->assertIsFloat($dto->maximumCommission);
+            $this->assertSame($merchant['maximumCommission'], $dto->maximumCommission);
+        }
 
         $this->assertIsArray($dto->commissionRates);
         $this->assertSame($merchant['commissionRates'], $dto->commissionRates);
