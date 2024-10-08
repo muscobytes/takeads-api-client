@@ -6,7 +6,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
  * Get report on clicks
  * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
  */
-readonly class ClickDto
+final readonly class ClickDto
 {
     /**
      * @param int $id Click item ID.
