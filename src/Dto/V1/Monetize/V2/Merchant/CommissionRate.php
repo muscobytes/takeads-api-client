@@ -19,4 +19,10 @@ final readonly class CommissionRate
     {
         //
     }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(...$array);
+    }
 }
