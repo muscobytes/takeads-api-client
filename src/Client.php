@@ -27,14 +27,14 @@ class Client
 
 
     public function __construct(
-        protected readonly string $publicKey,
-        protected readonly string $base_uri = 'https://api.takeads.com',
-        protected ?ClientInterface $client = null,
+        protected readonly string          $bearer,
+        protected readonly string          $base_uri = 'https://api.takeads.com',
+        protected ?ClientInterface         $client = null,
         protected ?RequestFactoryInterface $requestFactory = null,
-        protected ?StreamFactoryInterface $streamFactory = null
+        protected ?StreamFactoryInterface  $streamFactory = null
     )
     {
-        $this->headers['Authorization'] = 'Bearer ' . $this->publicKey;
+        $this->headers['Authorization'] = 'Bearer ' . $this->bearer;
         $this->client = $client ?: Psr18ClientDiscovery::find();
         $this->requestFactory = $requestFactory ?: Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = $streamFactory ?: Psr17FactoryDiscovery::findStreamFactory();
