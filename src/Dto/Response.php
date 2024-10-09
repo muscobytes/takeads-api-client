@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto;
+namespace Muscobytes\TakeadsApi\Dto;
 
 
-use Muscobytes\TakeAdsApi\Interfaces\ResponseInterface;
+use Muscobytes\TakeadsApi\Interfaces\ResponseInterface;
 use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
 
 abstract class Response implements ResponseInterface

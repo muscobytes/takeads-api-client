@@ -1,8 +1,8 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
+namespace Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click;
 
-use Muscobytes\TakeAdsApi\Dto\RequestParameters;
+use Muscobytes\TakeadsApi\Dto\RequestParameters;
 
 /**
  * Get report on clicks

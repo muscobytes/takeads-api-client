@@ -1,8 +1,8 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve;
 
-use Muscobytes\TakeAdsApi\Dto\RequestParameters;
+use Muscobytes\TakeadsApi\Dto\RequestParameters;
 
 /**
  * Get affiliate link

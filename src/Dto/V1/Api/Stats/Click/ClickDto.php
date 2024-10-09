@@ -1,10 +1,10 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
+namespace Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click;
 
 use DateTimeInterface;
-use Muscobytes\TakeAdsApi\Enums\ProductIdEnum;
-use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
+use Muscobytes\TakeadsApi\Enums\ProductIdEnum;
+use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 
 /**
  * Get report on clicks

@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Traits;
+namespace Muscobytes\TakeadsApi\Traits;
 
-use Muscobytes\TakeAdsApi\Dto\ResponseMetaOffset;
-use Muscobytes\TakeAdsApi\Exceptions\ResponseMetaIsMissingException;
+use Muscobytes\TakeadsApi\Dto\ResponseMetaOffset;
+use Muscobytes\TakeadsApi\Exceptions\ResponseMetaIsMissingException;
 
 trait HasMetaOffset
 {

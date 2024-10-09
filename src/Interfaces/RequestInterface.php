@@ -1,8 +1,8 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Interfaces;
+namespace Muscobytes\TakeadsApi\Interfaces;
 
-use Muscobytes\TakeAdsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Dto\Response;
 use Psr\Http\Message\ResponseInterface;
 
 interface RequestInterface

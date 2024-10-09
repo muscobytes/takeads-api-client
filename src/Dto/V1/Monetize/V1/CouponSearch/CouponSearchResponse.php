@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\CouponSearch;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch;
 
 use Generator;
-use Muscobytes\TakeAdsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Dto\Response;
 
 /**
  * Search for coupons

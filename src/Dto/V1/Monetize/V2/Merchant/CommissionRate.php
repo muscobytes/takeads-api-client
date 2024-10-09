@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant;
 
 /**
  * Get list of merchants

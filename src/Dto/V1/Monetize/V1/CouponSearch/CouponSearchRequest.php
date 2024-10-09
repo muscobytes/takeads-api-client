@@ -1,10 +1,10 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\CouponSearch;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch;
 
-use Muscobytes\TakeAdsApi\Dto\Request;
-use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\Methods\Post;
+use Muscobytes\TakeadsApi\Dto\Request;
+use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Traits\Methods\Post;
 use Psr\Http\Message\ResponseInterface;
 
 /**

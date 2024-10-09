@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Traits\Methods;
+namespace Muscobytes\TakeadsApi\Traits\Methods;
 
 trait Post
 {

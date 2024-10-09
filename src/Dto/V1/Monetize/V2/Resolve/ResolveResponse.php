@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve;
 
 use Generator;
-use Muscobytes\TakeAdsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Dto\Response;
 
 /**
  * Get affiliate link

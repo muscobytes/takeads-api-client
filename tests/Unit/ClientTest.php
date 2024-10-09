@@ -1,17 +1,17 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Tests\Unit;
+namespace Muscobytes\TakeadsApi\Tests\Unit;
 
 use Http\Discovery\Psr17Factory;
-use Muscobytes\TakeAdsApi\Client;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveResponse;
-use Muscobytes\TakeAdsApi\Exceptions\ClientErrorException;
-use Muscobytes\TakeAdsApi\Exceptions\ServerErrorException;
-use Muscobytes\TakeAdsApi\Exceptions\ServiceUnavailableException;
-use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
-use Muscobytes\TakeAdsApi\Tests\BaseTest;
+use Muscobytes\TakeadsApi\Client;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveResponse;
+use Muscobytes\TakeadsApi\Exceptions\ClientErrorException;
+use Muscobytes\TakeadsApi\Exceptions\ServerErrorException;
+use Muscobytes\TakeadsApi\Exceptions\ServiceUnavailableException;
+use Muscobytes\TakeadsApi\Exceptions\UnknownErrorException;
+use Muscobytes\TakeadsApi\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Http\Mock\Client as MockClient;
 

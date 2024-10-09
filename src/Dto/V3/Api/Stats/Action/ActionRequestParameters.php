@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V3\Api\Stats\Action;
+namespace Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action;
 
-use Muscobytes\TakeAdsApi\Dto\RequestParameters;
-use Muscobytes\TakeAdsApi\Enums\StatusEnum;
+use Muscobytes\TakeadsApi\Dto\RequestParameters;
+use Muscobytes\TakeadsApi\Enums\StatusEnum;
 
 /**
  * Get report on actions

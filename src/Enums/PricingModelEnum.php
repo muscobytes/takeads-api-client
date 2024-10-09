@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Enums;
+namespace Muscobytes\TakeadsApi\Enums;
 
 enum PricingModelEnum: string
 {

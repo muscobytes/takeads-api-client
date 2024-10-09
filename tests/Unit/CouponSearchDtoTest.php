@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Tests\Unit;
+namespace Muscobytes\TakeadsApi\Tests\Unit;
 
-use Muscobytes\TakeAdsApi\Tests\BaseTest;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\CouponSearch\CouponDto;
+use Muscobytes\TakeadsApi\Tests\BaseTest;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch\CouponDto;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 

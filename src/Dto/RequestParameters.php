@@ -1,8 +1,8 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto;
+namespace Muscobytes\TakeadsApi\Dto;
 
-use Muscobytes\TakeAdsApi\Interfaces\RequestParametersInterface;
+use Muscobytes\TakeadsApi\Interfaces\RequestParametersInterface;
 
 abstract readonly class RequestParameters implements RequestParametersInterface
 {

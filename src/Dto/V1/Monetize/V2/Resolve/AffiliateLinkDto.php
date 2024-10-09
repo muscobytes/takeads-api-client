@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve;
 
 final readonly class AffiliateLinkDto
 {

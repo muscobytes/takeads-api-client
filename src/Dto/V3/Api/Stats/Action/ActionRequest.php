@@ -1,10 +1,10 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V3\Api\Stats\Action;
+namespace Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action;
 
-use Muscobytes\TakeAdsApi\Dto\Request;
-use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\Methods\Get;
+use Muscobytes\TakeadsApi\Dto\Request;
+use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Traits\Methods\Get;
 use Psr\Http\Message\ResponseInterface;
 
 /**

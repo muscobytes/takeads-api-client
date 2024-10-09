@@ -1,20 +1,20 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi;
+namespace Muscobytes\TakeadsApi;
 
 
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
-use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Exceptions\ClientErrorException;
-use Muscobytes\TakeAdsApi\Exceptions\ServerErrorException;
-use Muscobytes\TakeAdsApi\Exceptions\ServiceUnavailableException;
-use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
+use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Exceptions\ClientErrorException;
+use Muscobytes\TakeadsApi\Exceptions\ServerErrorException;
+use Muscobytes\TakeadsApi\Exceptions\ServiceUnavailableException;
+use Muscobytes\TakeadsApi\Exceptions\UnknownErrorException;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use Muscobytes\TakeAdsApi\Interfaces\RequestInterface;
+use Muscobytes\TakeadsApi\Interfaces\RequestInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Http\Message\RequestInterface as HttpRequestInterface;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant;
 
 use Generator;
-use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\HasMetaNext;
+use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Traits\HasMetaNext;
 
 /**
  * Get list of merchants

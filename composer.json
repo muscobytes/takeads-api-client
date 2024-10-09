@@ -4,12 +4,12 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Muscobytes\\TakeAdsApi\\": "src/"
+            "Muscobytes\\TakeadsApi\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Muscobytes\\TakeAdsApi\\Tests\\": "tests/"
+            "Muscobytes\\TakeadsApi\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",

@@ -1,11 +1,11 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Tests\Unit;
+namespace Muscobytes\TakeadsApi\Tests\Unit;
 
 use DateTimeInterface;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant\CommissionRate;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant\MerchantDto;
-use Muscobytes\TakeAdsApi\Tests\BaseTest;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant\CommissionRate;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant\MerchantDto;
+use Muscobytes\TakeadsApi\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 

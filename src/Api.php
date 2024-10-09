@@ -1,28 +1,28 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi;
+namespace Muscobytes\TakeadsApi;
 
-use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click\ClickRequest;
-use Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click\ClickRequestParameters;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\Coupons\CouponsRequest;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\Coupons\CouponsRequestParameters;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\CouponSearch\CouponSearchRequest;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\CouponSearch\CouponSearchRequestParameters;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant\MerchantRequest;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant\MerchantRequestParameters;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
-use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
-use Muscobytes\TakeAdsApi\Exceptions\ClientErrorException;
-use Muscobytes\TakeAdsApi\Exceptions\ServerErrorException;
-use Muscobytes\TakeAdsApi\Exceptions\ServiceUnavailableException;
-use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
+use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click\ClickRequest;
+use Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click\ClickRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons\CouponsRequest;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons\CouponsRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch\CouponSearchRequest;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch\CouponSearchRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant\MerchantRequest;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant\MerchantRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
+use Muscobytes\TakeadsApi\Exceptions\ClientErrorException;
+use Muscobytes\TakeadsApi\Exceptions\ServerErrorException;
+use Muscobytes\TakeadsApi\Exceptions\ServiceUnavailableException;
+use Muscobytes\TakeadsApi\Exceptions\UnknownErrorException;
 
 
 class Api
 {
     public function __construct(
-        protected Client $client
+        private readonly Client $client
     )
     {
         //

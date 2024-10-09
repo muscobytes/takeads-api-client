@@ -1,10 +1,10 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
+namespace Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click;
 
 use Generator;
-use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\HasMetaOffset;
+use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Traits\HasMetaOffset;
 
 /**
  * Get report on clicks

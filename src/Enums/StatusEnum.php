@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Enums;
+namespace Muscobytes\TakeadsApi\Enums;
 
 /**
  * Get report on actions

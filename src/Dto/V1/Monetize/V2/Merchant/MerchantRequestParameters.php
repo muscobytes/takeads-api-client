@@ -1,8 +1,8 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant;
 
-use Muscobytes\TakeAdsApi\Dto\RequestParameters;
+use Muscobytes\TakeadsApi\Dto\RequestParameters;
 
 /**
  * Get list of merchants

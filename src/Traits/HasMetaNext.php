@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Traits;
+namespace Muscobytes\TakeadsApi\Traits;
 
-use Muscobytes\TakeAdsApi\Dto\ResponseMetaNext;
-use Muscobytes\TakeAdsApi\Exceptions\ResponseMetaIsMissingException;
+use Muscobytes\TakeadsApi\Dto\ResponseMetaNext;
+use Muscobytes\TakeadsApi\Exceptions\ResponseMetaIsMissingException;
 
 trait HasMetaNext
 {

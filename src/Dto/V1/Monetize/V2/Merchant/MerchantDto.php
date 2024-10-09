@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Merchant;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant;
 
 use DateTimeInterface;
-use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
+use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 
 /**
  * Get list of merchants

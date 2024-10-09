@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Traits\Casts;
+namespace Muscobytes\TakeadsApi\Traits\Casts;
 
 use \DateTime;
 

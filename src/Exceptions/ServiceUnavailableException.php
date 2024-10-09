@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Exceptions;
+namespace Muscobytes\TakeadsApi\Exceptions;
 
 class ServiceUnavailableException extends \Exception
 {

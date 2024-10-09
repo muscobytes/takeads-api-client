@@ -1,10 +1,10 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V2\Resolve;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve;
 
-use Muscobytes\TakeAdsApi\Dto\Request;
-use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\Methods\Put;
+use Muscobytes\TakeadsApi\Dto\Request;
+use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Traits\Methods\Put;
 use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto;
+namespace Muscobytes\TakeadsApi\Dto;
 
 readonly class ResponseMetaOffset
 {

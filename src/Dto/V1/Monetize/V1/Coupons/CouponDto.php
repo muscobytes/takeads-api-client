@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\Coupons;
+namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons;
 
 /**
  * Coupon DTO

@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto;
+namespace Muscobytes\TakeadsApi\Dto;
 
-use Muscobytes\TakeAdsApi\Interfaces\RequestInterface;
-use Muscobytes\TakeAdsApi\Interfaces\RequestParametersInterface;
+use Muscobytes\TakeadsApi\Interfaces\RequestInterface;
+use Muscobytes\TakeadsApi\Interfaces\RequestParametersInterface;
 
 abstract class Request implements RequestInterface
 {
