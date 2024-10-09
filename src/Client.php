@@ -23,18 +23,14 @@ class Client
 {
     protected HttpRequestInterface $request;
 
-    protected array $headers = [];
-
-
     public function __construct(
-        protected readonly string          $bearer,
+        protected readonly AuthorizationHeaderProvider $authorizationHeaderProvider,
         protected readonly string          $base_uri = 'https://api.takeads.com',
         protected ?ClientInterface         $client = null,
         protected ?RequestFactoryInterface $requestFactory = null,
         protected ?StreamFactoryInterface  $streamFactory = null
     )
     {
-        $this->headers['Authorization'] = 'Bearer ' . $this->bearer;
         $this->client = $client ?: Psr18ClientDiscovery::find();
         $this->requestFactory = $requestFactory ?: Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = $streamFactory ?: Psr17FactoryDiscovery::findStreamFactory();
@@ -63,9 +59,18 @@ class Client
 
     public function addHeaders(RequestInterface $command): self
     {
-        foreach (array_merge($this->headers, $command->getHeaders()) as $key => $value) {
+        foreach ($command->getHeaders() as $key => $value) {
             $this->request = $this->request->withHeader($key, $value);
         }
+
+        $this->request = $this->request->withHeader(
+            'Authorization',
+            join(' ', [
+                'Bearer',
+                $this->authorizationHeaderProvider->getBearer($command->getAuthorizationKeyType())
+            ])
+        );
+
         return $this;
     }
 

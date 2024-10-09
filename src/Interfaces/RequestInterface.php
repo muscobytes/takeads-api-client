@@ -3,6 +3,7 @@
 namespace Muscobytes\TakeadsApi\Interfaces;
 
 use Muscobytes\TakeadsApi\Dto\Response;
+use Muscobytes\TakeadsApi\Enums\AuthorizationKeyEnum;
 use Psr\Http\Message\ResponseInterface;
 
 interface RequestInterface
@@ -20,4 +21,6 @@ interface RequestInterface
     public function getBody(): string;
 
     public function makeResponse(ResponseInterface $response): Response;
+
+    public function getAuthorizationKeyType(): AuthorizationKeyEnum;
 }

@@ -3,6 +3,7 @@
 namespace Muscobytes\TakeadsApi\Tests\Unit;
 
 use Http\Discovery\Psr17Factory;
+use Muscobytes\TakeadsApi\AuthorizationHeaderProvider;
 use Muscobytes\TakeadsApi\Client;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
@@ -28,7 +29,7 @@ class ClientTest extends BaseTest
     {
         $mockHttpClient = new MockClient();
         $apiClient = new Client(
-            'public-key',
+            new AuthorizationHeaderProvider('account-bearer', 'platform-bearer'),
             'http://localhost',
             $mockHttpClient
         );

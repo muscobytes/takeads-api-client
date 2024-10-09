@@ -7,7 +7,7 @@ use Muscobytes\TakeadsApi\Interfaces\RequestParametersInterface;
 
 abstract class Request implements RequestInterface
 {
-    protected array $headers = [];
+    private array $headers = [];
 
 
     public function __construct(
