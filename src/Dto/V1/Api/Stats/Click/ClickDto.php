@@ -15,12 +15,12 @@ final readonly class ClickDto
     use CastDatetime;
 
     /**
-     * @param int $id Click item ID.
+     * @param string $id Click item ID.
      * @param string $adspaceId ID (UUIDv4) of the platform you received the report for.
      * @param string $adspaceName Name of the platform.
-     * @param string $programId ID (UUIDv4) of the program you received the report for.
+     * @param string|null $programId ID (UUIDv4) of the program you received the report for.
      * @param string $programName Name of the program.
-     * @param string $subId SubID of the deeplink you received the report for.
+     * @param string|null $subId SubID of the deeplink you received the report for.
      * @param string $date Date when clicks in the click item were performed. Example: 2021-08-03
      * @param int $count Number of clicks in the click item.
      * @param ProductIdEnum $productId ID of the Takeads product.
@@ -28,12 +28,12 @@ final readonly class ClickDto
      *      last updated in the statistics. Example: 2021-08-03T19:53:15.816Z
      */
     public function __construct(
-        public int $id,
+        public string $id,
         public string $adspaceId,
         public string $adspaceName,
-        public string $programId,
+        public ?string $programId,
         public string $programName,
-        public string $subId,
+        public ?string $subId,
         public string $date,
         public int $count,
         public ProductIdEnum $productId,
@@ -55,7 +55,7 @@ final readonly class ClickDto
             subId: $array['subId'],
             date: $array['date'],
             count: $array['count'],
-            productId: $array['productId'],
+            productId: ProductIdEnum::from($array['productId']),
             updatedAt: self::castDatetime($array['updatedAt'])
         );
     }
