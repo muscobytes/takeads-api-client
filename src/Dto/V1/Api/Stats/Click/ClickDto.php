@@ -41,4 +41,10 @@ final readonly class ClickDto
     {
         //
     }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(...$array);
+    }
 }

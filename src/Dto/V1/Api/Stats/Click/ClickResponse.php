@@ -17,7 +17,7 @@ final class ClickResponse extends Response
     public function getData(): Generator
     {
         yield array_map(
-            fn (array $item) => new ClickDto(...$item),
+            fn (array $item) => ClickDto::fromArray($item),
             json_decode($this->getResponse()->getBody(), true)['data']
         );
     }
