@@ -16,8 +16,9 @@ final class ClickResponse extends Response
 
     public function getData(): Generator
     {
-        foreach (json_decode($this->getResponse()->getBody(), true)['data'] as $item) {
-            yield new ClickDto(...$item);
-        }
+        yield array_map(
+            fn (array $item) => new ClickDto(...$item),
+            json_decode($this->getResponse()->getBody(), true)['data']
+        );
     }
 }
