@@ -51,23 +51,23 @@ final readonly class CouponDto
     }
 
 
-    public static function fromArray(array $data): self
+    public static function fromArray(array $array): self
     {
         return new self(
-            couponId: $data['couponId'],
-            trackingLink: $data['trackingLink'],
-            name: $data['name'],
-            code: $data['code'],
-            merchantId: $data['merchantId'],
-            imageUri: $data['imageUri'],
-            languageCodes: $data['languageCodes'],
-            countryCodes: $data['countryCodes'],
-            startDate: self::castDatetime($data['startDate']),
-            endDate: self::castDatetime($data['endDate']),
-            description: $data['description'],
-            categoryIds: $data['categoryIds'],
-            createdAt: self::castDatetime($data['createdAt']),
-            updatedAt: self::castDatetime($data['updatedAt'])
+            couponId: $array['couponId'],
+            trackingLink: $array['trackingLink'],
+            name: $array['name'],
+            code: $array['code'],
+            merchantId: $array['merchantId'],
+            imageUri: $array['imageUri'],
+            languageCodes: $array['languageCodes'],
+            countryCodes: $array['countryCodes'],
+            startDate: self::castDatetime($array['startDate']),
+            endDate: self::castDatetime($array['endDate']),
+            description: $array['description'],
+            categoryIds: $array['categoryIds'],
+            createdAt: self::castDatetime($array['createdAt']),
+            updatedAt: self::castDatetime($array['updatedAt'])
         );
     }
 }
