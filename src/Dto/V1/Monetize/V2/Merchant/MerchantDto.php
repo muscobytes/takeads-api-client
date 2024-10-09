@@ -69,9 +69,10 @@ final readonly class MerchantDto
 
     protected static function castComissionRates(array $rates): array
     {
-        return array_map(function($rate){
-            return new CommissionRate(...$rate);
-        }, $rates);
+        return array_map(
+            fn (array $rate) => new CommissionRate(...$rate),
+            $rates
+        );
     }
 
 
