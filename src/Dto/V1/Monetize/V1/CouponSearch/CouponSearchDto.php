@@ -26,7 +26,7 @@ final readonly class CouponSearchDto
         return new self(
             iri: $data['iris'],
             coupons: array_map(
-                fn (array $coupon) => new CouponDto(...$coupon),
+                fn (array $coupon) => CouponDto::fromArray($coupon),
                 $data['coupons']
             )
         );
