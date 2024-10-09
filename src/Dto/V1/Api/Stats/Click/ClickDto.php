@@ -23,12 +23,7 @@ final readonly class ClickDto
      * @param string $subId SubID of the deeplink you received the report for.
      * @param string $date Date when clicks in the click item were performed. Example: 2021-08-03
      * @param int $count Number of clicks in the click item.
-     * @param ProductIdEnum $productId ID of the Takeads product. Possible values:
-     *      - MONETIZE_LINK_SCRIPT,
-     *      - MONETIZE_LINK_API,
-     *      - MONETIZE_API,
-     *      - MONETIZE_SEARCH_API,
-     *      - MONETIZE_SUGGEST.
+     * @param ProductIdEnum $productId ID of the Takeads product.
      * @param DateTimeInterface $updatedAt Timestamp ($ISO 8601) when information about clicks in the click item was
      *      last updated in the statistics. Example: 2021-08-03T19:53:15.816Z
      */
