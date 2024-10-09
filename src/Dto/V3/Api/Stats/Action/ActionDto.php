@@ -4,6 +4,7 @@ namespace Muscobytes\TakeAdsApi\Dto\V3\Api\Stats\Action;
 
 use DateTimeInterface;
 use Muscobytes\TakeAdsApi\Enums\ProductIdEnum;
+use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
 
 /**
  * Get report on clicks
@@ -12,6 +13,8 @@ use Muscobytes\TakeAdsApi\Enums\ProductIdEnum;
 
 final readonly class ActionDto
 {
+    use CastDatetime;
+
     /**
      * @param int $id Click item ID.
      * @param string $adspaceId ID (UUIDv4) of the platform you received the report for.
@@ -45,6 +48,17 @@ final readonly class ActionDto
 
     public static function fromArray(array $array): self
     {
-        return new self(...$array);
+        return new self(
+            id: $array['id'],
+            adspaceId: $array['adspaceId'],
+            adspaceName: $array['adspaceName'],
+            programId: $array['programId'],
+            programName: $array['programName'],
+            subId: $array['subId'],
+            date: $array['date'],
+            count: $array['count'],
+            productId: $array['productId'],
+            updatedAt: self::castDatetime($array['updatedAt'])
+        );
     }
 }
