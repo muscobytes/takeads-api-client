@@ -8,12 +8,10 @@ abstract readonly class RequestParameters implements RequestParametersInterface
 {
     public function removeNullValues(array $parameters): array
     {
-        foreach ($parameters as $key => $value) {
-            if (is_null($value)) {
-                unset($parameters[$key]);
-            }
-        }
-        return $parameters;
+        return array_filter(
+            $parameters,
+            fn ($parameter) => !is_null($parameter)
+        );
     }
 
 
