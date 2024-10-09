@@ -80,9 +80,9 @@ final readonly class MerchantDto
     }
 
 
-    public static function fromArray(array $array): MerchantDto
+    public static function fromArray(array $array): self
     {
-        return new MerchantDto(
+        return new self(
             merchantId: $array['merchantId'],
             name: $array['name'],
             imageUri: $array['imageUri'],
