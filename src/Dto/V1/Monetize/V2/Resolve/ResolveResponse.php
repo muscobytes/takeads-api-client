@@ -14,7 +14,7 @@ final class ResolveResponse extends Response
     public function getData(): Generator
     {
         yield array_map(
-            fn (array $item) => new AffiliateLinkDto(...$item),
+            fn (array $item) => AffiliateLinkDto::fromArray($item),
             json_decode($this->getResponse()->getBody(), true)['data']
         );
     }

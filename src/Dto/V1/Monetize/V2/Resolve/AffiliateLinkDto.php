@@ -18,4 +18,10 @@ final readonly class AffiliateLinkDto
     {
         //
     }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(...$array);
+    }
 }
