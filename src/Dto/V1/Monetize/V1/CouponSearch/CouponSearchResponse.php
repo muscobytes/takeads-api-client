@@ -13,14 +13,9 @@ class CouponSearchResponse extends Response
 {
     public function getData(): Generator
     {
-        foreach (json_decode($this->response->getBody(), true)['data'] as $item) {
-            yield new CouponSearchDto(
-                iri: $item['iris'],
-                coupons: array_map(
-                    fn (array $coupon) => new CouponDto(...$coupon),
-                    $item['coupons']
-                )
-            );
-        }
+        yield array_map(
+            fn (array $item) => CouponSearchDto::fromArray($item),
+            json_decode($this->response->getBody(), true)['data']
+        );
     }
 }

@@ -19,4 +19,16 @@ final readonly class CouponSearchDto
     {
         //
     }
+
+
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            iri: $data['iris'],
+            coupons: array_map(
+                fn (array $coupon) => new CouponDto(...$coupon),
+                $data['coupons']
+            )
+        );
+    }
 }
