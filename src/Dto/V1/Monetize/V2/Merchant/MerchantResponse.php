@@ -17,8 +17,7 @@ final class MerchantResponse extends Response
 
     public function getData(): Generator
     {
-        $body = json_decode($this->getResponse()->getBody(), true);
-        foreach ($body['data'] as $item) {
+        foreach (json_decode($this->getResponse()->getBody(), true)['data'] as $item) {
             yield MerchantDto::fromArray($item);
         }
     }
