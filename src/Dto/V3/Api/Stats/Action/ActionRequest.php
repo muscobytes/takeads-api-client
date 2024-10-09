@@ -8,8 +8,8 @@ use Muscobytes\TakeAdsApi\Traits\Methods\Get;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Get report on clicks
- * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
+ * Get report on actions
+ * https://developers.takeads.com/knowledge-base/article/get-report-on-actions
  */
 class ActionRequest extends Request
 {

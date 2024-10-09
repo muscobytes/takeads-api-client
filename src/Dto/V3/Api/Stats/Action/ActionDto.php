@@ -3,43 +3,55 @@
 namespace Muscobytes\TakeAdsApi\Dto\V3\Api\Stats\Action;
 
 use DateTimeInterface;
+use Muscobytes\TakeAdsApi\Enums\PricingModelEnum;
 use Muscobytes\TakeAdsApi\Enums\ProductIdEnum;
+use Muscobytes\TakeAdsApi\Enums\StatusEnum;
 use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
 
 /**
- * Get report on clicks
- * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
+ * Get report on actions
+ * https://developers.takeads.com/knowledge-base/article/get-report-on-actions
  */
-
 final readonly class ActionDto
 {
     use CastDatetime;
 
     /**
-     * @param int $id Click item ID.
-     * @param string $adspaceId ID (UUIDv4) of the platform you received the report for.
-     * @param string $adspaceName Name of the platform.
-     * @param string $programId ID (UUIDv4) of the program you received the report for.
-     * @param string $programName Name of the program.
-     * @param string|null $subId SubID of the deeplink you received the report for.
-     * @param string $date Date when clicks in the click item were performed. Example: 2021-08-03
-     * @param int $count Number of clicks in the click item.
-     * @param ProductIdEnum $productId ID of the Takeads product.
-     * @param DateTimeInterface $updatedAt Timestamp ($ISO 8601) when information about clicks in the click item
-     *      was last updated in the statistics.
-     *      Example: 2021-08-03T19:53:15.816Z
+     * @param string $actionId Unique identifier of the action assigned by Takeads.
+     * @param int $actionNumericId Numeric unique identifier of the action. This field must only be used to correlate
+     *      actions from the new endpoint with actions from the old one actionId.
+     * @param string $adspaceId Identifier of the adspace to which the action belongs.
+     * @param int $merchantId Merchant identifier.
+     * @param StatusEnum $status Action status.
+     * @param string $subId Sub id associated with the action, as provided by the user.
+     * @param int $publisherRevenue Amount of the publisher’s revenue.
+     * @param int $orderAmount Order amount.
+     * @param string $currencyCode ISO 4217:2008 alpha-3 currency code of the action's orderAmount and publisherRevenue.
+     * @param PricingModelEnum $type Pricing model of the action.
+     * @param string $orderDate Date when the action was received.
+     * @param DateTimeInterface $createdAt Date when the action become available in API.
+     * @param DateTimeInterface $updatedAt Date of the last update.
+     * @param string $countryCode Alpha-2 country code according to the ISO 3166 standard.
+     * @param string $clickId Click unique identifier. Alphanumeric.
+     * @param string $couponId Coupon unique identifier. Alphanumeric.
      */
     public function __construct(
-        public int $id,
+        public string $actionId,
+        public int $actionNumericId,
         public string $adspaceId,
-        public string $adspaceName,
-        public string $programId,
-        public string $programName,
-        public ?string $subId,
-        public string $date,
-        public int $count,
-        public ProductIdEnum $productId,
-        public DateTimeInterface $updatedAt
+        public int $merchantId,
+        public StatusEnum $status,
+        public string $subId,
+        public int $publisherRevenue,
+        public int $orderAmount,
+        public string $currencyCode,
+        public PricingModelEnum $type,
+        public string $orderDate,
+        public DateTimeInterface $createdAt,
+        public DateTimeInterface $updatedAt,
+        public string $countryCode,
+        public string $clickId,
+        public string $couponId
     )
     {
         //
@@ -49,16 +61,22 @@ final readonly class ActionDto
     public static function fromArray(array $array): self
     {
         return new self(
-            id: $array['id'],
+            actionId: $array['actionId'],
+            actionNumericId: $array['actionNumericId'],
             adspaceId: $array['adspaceId'],
-            adspaceName: $array['adspaceName'],
-            programId: $array['programId'],
-            programName: $array['programName'],
+            merchantId: $array['merchantId'],
+            status: $array['status'],
             subId: $array['subId'],
-            date: $array['date'],
-            count: $array['count'],
-            productId: $array['productId'],
-            updatedAt: self::castDatetime($array['updatedAt'])
+            publisherRevenue: $array['publisherRevenue'],
+            orderAmount: $array['orderAmount'],
+            currencyCode: $array['currencyCode'],
+            type: $array['type'],
+            orderDate: $array['orderDate'],
+            createdAt: self::castDatetime($array['createdAt']),
+            updatedAt: self::castDatetime($array['updatedAt']),
+            countryCode: $array['countryCode'],
+            clickId: $array['clickId'],
+            couponId: $array['couponId']
         );
     }
 }

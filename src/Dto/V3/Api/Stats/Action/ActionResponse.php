@@ -4,15 +4,15 @@ namespace Muscobytes\TakeAdsApi\Dto\V3\Api\Stats\Action;
 
 use Generator;
 use Muscobytes\TakeAdsApi\Dto\Response;
-use Muscobytes\TakeAdsApi\Traits\HasMetaOffset;
+use Muscobytes\TakeAdsApi\Traits\HasMetaNext;
 
 /**
- * Get report on clicks
- * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
+ * Get report on actions
+ * https://developers.takeads.com/knowledge-base/article/get-report-on-actions
  */
 class ActionResponse extends Response
 {
-    use HasMetaOffset;
+    use HasMetaNext;
 
     public function getData(): Generator
     {
