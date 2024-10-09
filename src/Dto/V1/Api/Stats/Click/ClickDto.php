@@ -2,12 +2,17 @@
 
 namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
 
+use DateTimeInterface;
+use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
+
 /**
  * Get report on clicks
  * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
  */
 final readonly class ClickDto
 {
+    use CastDatetime;
+
     /**
      * @param int $id Click item ID.
      * @param string $adspaceId ID (UUIDv4) of the platform you received the report for.
@@ -23,7 +28,7 @@ final readonly class ClickDto
      *      - MONETIZE_API,
      *      - MONETIZE_SEARCH_API,
      *      - MONETIZE_SUGGEST.
-     * @param string $updatedAt Timestamp ($ISO 8601) when information about clicks in the click item was
+     * @param DateTimeInterface $updatedAt Timestamp ($ISO 8601) when information about clicks in the click item was
      *      last updated in the statistics. Example: 2021-08-03T19:53:15.816Z
      */
     public function __construct(
@@ -36,7 +41,7 @@ final readonly class ClickDto
         public string $date,
         public int $count,
         public ProductIdEnum $productId,
-        public string $updatedAt
+        public DateTimeInterface $updatedAt
     )
     {
         //
@@ -45,6 +50,17 @@ final readonly class ClickDto
 
     public static function fromArray(array $array): self
     {
-        return new self(...$array);
+        return new self(
+            id: $array['id'],
+            adspaceId: $array['adspaceId'],
+            adspaceName: $array['adspaceName'],
+            programId: $array['programId'],
+            programName: $array['programName'],
+            subId: $array['subId'],
+            date: $array['date'],
+            count: $array['count'],
+            productId: $array['productId'],
+            updatedAt: self::castDatetime($array['updatedAt'])
+        );
     }
 }
