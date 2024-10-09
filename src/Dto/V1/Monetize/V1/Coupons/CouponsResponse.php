@@ -17,7 +17,7 @@ final class CouponsResponse extends Response
     public function getData(): Generator
     {
         yield array_map(
-            fn (array $item) => new CouponDto(...$item),
+            fn (array $item) => CouponDto::fromArray($item),
             json_decode($this->response->getBody(), true)['data']
         );
     }
