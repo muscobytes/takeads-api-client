@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
+namespace Muscobytes\TakeAdsApi\Enums;
 
 enum ProductIdEnum
 {

@@ -3,6 +3,7 @@
 namespace Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click;
 
 use DateTimeInterface;
+use Muscobytes\TakeAdsApi\Enums\ProductIdEnum;
 use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
 
 /**
