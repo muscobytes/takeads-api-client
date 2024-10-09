@@ -67,6 +67,10 @@ final readonly class MerchantDto
     }
 
 
+    /**
+     * @param array $rates
+     * @return array<CommissionRate>
+     */
     protected static function castComissionRates(array $rates): array
     {
         return array_map(
