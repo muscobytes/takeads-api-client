@@ -105,13 +105,13 @@ class MerchantDtoTest extends BaseTest
         $this->assertInstanceOf(DateTimeInterface::class, $dto->createdAt);
         $this->assertSame(
             $entry['createdAt'],
-            $dto->createdAt->format(MerchantDto::DATE_FORMAT)
+            $dto->createdAt->format(MerchantDto::FORMAT_ISO_8601)
         );
 
         $this->assertInstanceOf(DateTimeInterface::class, $dto->updatedAt);
         $this->assertSame(
             $entry['updatedAt'],
-            $dto->updatedAt->format(MerchantDto::DATE_FORMAT)
+            $dto->updatedAt->format(MerchantDto::FORMAT_ISO_8601)
         );
     }
 
