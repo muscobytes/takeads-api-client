@@ -17,7 +17,7 @@ abstract readonly class RequestParameters implements RequestParametersInterface
 
     /**
      * Transforms boolean values into string
-     * @param array $parameters
+     * @param array $array
      * @return array
      */
     public function transformBoolean(array $array): array
