@@ -21,13 +21,13 @@ final readonly class CouponSearchDto
     }
 
 
-    public static function fromArray(array $data): self
+    public static function fromArray(array $array): self
     {
         return new self(
-            iri: $data['iris'],
+            iri: $array['iris'],
             coupons: array_map(
                 fn (array $coupon) => CouponDto::fromArray($coupon),
-                $data['coupons']
+                $array['coupons']
             )
         );
     }
