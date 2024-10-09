@@ -2,6 +2,7 @@
 
 namespace Muscobytes\TakeAdsApi;
 
+use Muscobytes\TakeAdsApi\Dto\Response;
 use Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click\ClickRequest;
 use Muscobytes\TakeAdsApi\Dto\V1\Api\Stats\Click\ClickRequestParameters;
 use Muscobytes\TakeAdsApi\Dto\V1\Monetize\V1\Coupons\CouponsRequest;
@@ -16,7 +17,6 @@ use Muscobytes\TakeAdsApi\Exceptions\ClientErrorException;
 use Muscobytes\TakeAdsApi\Exceptions\ServerErrorException;
 use Muscobytes\TakeAdsApi\Exceptions\ServiceUnavailableException;
 use Muscobytes\TakeAdsApi\Exceptions\UnknownErrorException;
-use Muscobytes\TakeAdsApi\Dto\Response;
 
 
 class Api
