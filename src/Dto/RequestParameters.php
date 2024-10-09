@@ -20,17 +20,12 @@ abstract readonly class RequestParameters implements RequestParametersInterface
      * @param array $parameters
      * @return array
      */
-    public function transformBoolean(array $parameters): array
+    public function transformBoolean(array $array): array
     {
-        $result = [];
-        foreach ($parameters as $key => $value) {
-            if (is_bool($value)) {
-                $result[$key] = $value ? 'true' : 'false';
-            } else {
-                $result[$key] = $value;
-            }
-        }
-        return $result;
+        return array_map(
+            fn ($value) => is_bool($value) ? $value ? 'true' : 'false' : $value,
+            $array
+        );
     }
 
 
