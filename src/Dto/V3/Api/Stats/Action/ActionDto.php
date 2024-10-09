@@ -4,7 +4,6 @@ namespace Muscobytes\TakeAdsApi\Dto\V3\Api\Stats\Action;
 
 use DateTimeInterface;
 use Muscobytes\TakeAdsApi\Enums\PricingModelEnum;
-use Muscobytes\TakeAdsApi\Enums\ProductIdEnum;
 use Muscobytes\TakeAdsApi\Enums\StatusEnum;
 use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
 

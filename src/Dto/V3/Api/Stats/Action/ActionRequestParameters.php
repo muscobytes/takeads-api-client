@@ -4,7 +4,6 @@ namespace Muscobytes\TakeAdsApi\Dto\V3\Api\Stats\Action;
 
 use Muscobytes\TakeAdsApi\Dto\RequestParameters;
 use Muscobytes\TakeAdsApi\Enums\StatusEnum;
-use Muscobytes\TakeAdsApi\Traits\Casts\CastDatetime;
 
 /**
  * Get report on actions
