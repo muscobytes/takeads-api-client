@@ -21,10 +21,10 @@ namespace Muscobytes\TakeAdsApi\Enums;
  * Example: an action transitioned to the CONFIRMED status on 05/07/2024. If within the next 45 days this action
  * doesn't transition to another status or have a revenue change, then it will be marked as SETTLED.
  */
-enum StatusEnum
+enum StatusEnum: string
 {
-    case PENDING;
-    case CONFIRMED;
-    case CANCELED;
-    case SETTLED;
+    case PENDING = 'PENDING';
+    case CONFIRMED = 'CONFIRMED';
+    case CANCELED = 'CANCELED';
+    case SETTLED = 'SETTLED';
 }

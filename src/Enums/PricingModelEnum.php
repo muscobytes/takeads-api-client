@@ -2,10 +2,10 @@
 
 namespace Muscobytes\TakeAdsApi\Enums;
 
-enum PricingModelEnum
+enum PricingModelEnum: string
 {
-    case LEAD;
-    case SALE;
-    case CLICK;
-    case BONUS;
+    case LEAD = 'LEAD';
+    case SALE = 'SALE';
+    case CLICK = 'CLICK';
+    case BONUS = 'BONUS';
 }
