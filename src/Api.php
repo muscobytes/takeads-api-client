@@ -19,10 +19,10 @@ use Muscobytes\TakeadsApi\Exceptions\ServiceUnavailableException;
 use Muscobytes\TakeadsApi\Exceptions\UnknownErrorException;
 
 
-class Api
+readonly class Api
 {
     public function __construct(
-        private readonly Client $client
+        private Client $client
     )
     {
         //
