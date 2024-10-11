@@ -3,7 +3,6 @@
 namespace Muscobytes\TakeadsApi\Tests\Unit;
 
 use Http\Discovery\Psr17Factory;
-use Muscobytes\TakeadsApi\AuthorizationHeaderProvider;
 use Muscobytes\TakeadsApi\Client;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
@@ -29,7 +28,6 @@ class ClientTest extends BaseTest
     {
         $mockHttpClient = new MockClient();
         $apiClient = new Client(
-            new AuthorizationHeaderProvider('account-bearer', 'platform-bearer'),
             'http://localhost',
             $mockHttpClient
         );
@@ -43,7 +41,11 @@ class ClientTest extends BaseTest
             'https://aliexpress.com',
             'https://temu.com'
         ]);
-        $resolveRequest = new ResolveRequest($resolveRequestParameters);
+        $bearerToken = 'raNd0m/bEaReRt0ken';
+        $resolveRequest = new ResolveRequest(
+            $bearerToken,
+            $resolveRequestParameters
+        );
         $response = $apiClient->call($resolveRequest);
         $this->assertInstanceOf(ResolveResponse::class, $response);
     }
