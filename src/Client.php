@@ -24,7 +24,6 @@ class Client
     protected HttpRequestInterface $request;
 
     public function __construct(
-        protected readonly AuthorizationHeaderProvider $authorizationHeaderProvider,
         protected readonly string          $base_uri = 'https://api.takeads.com',
         protected ?ClientInterface         $client = null,
         protected ?RequestFactoryInterface $requestFactory = null,
@@ -62,15 +61,6 @@ class Client
         foreach ($command->getHeaders() as $key => $value) {
             $this->request = $this->request->withHeader($key, $value);
         }
-
-        $this->request = $this->request->withHeader(
-            'Authorization',
-            join(' ', [
-                'Bearer',
-                $this->authorizationHeaderProvider->getBearer($command->getAuthorizationKeyType())
-            ])
-        );
-
         return $this;
     }
 

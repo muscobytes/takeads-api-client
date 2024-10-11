@@ -11,10 +11,11 @@ abstract class Request implements RequestInterface
 
 
     public function __construct(
+        string $bearerToken,
         protected RequestParametersInterface $parameters
     )
     {
-        //
+        $this->headers['Authorization'] = 'Bearer ' . $bearerToken;
     }
 
 

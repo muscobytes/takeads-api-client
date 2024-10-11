@@ -8,7 +8,10 @@ use Psr\Http\Message\ResponseInterface;
 
 interface RequestInterface
 {
-    public function __construct(RequestParametersInterface $parameters);
+    public function __construct(
+        string $bearerToken,
+        RequestParametersInterface $parameters
+    );
 
     public function getHttpMethod(): string;
 
