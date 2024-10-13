@@ -31,6 +31,13 @@ abstract class Request implements RequestInterface
     }
 
 
+    public function setHeader(string $name, string $value): self
+    {
+        $this->headers[$name] = $value;
+        return $this;
+    }
+
+
     public function getHeaders(): array
     {
         return $this->headers;
