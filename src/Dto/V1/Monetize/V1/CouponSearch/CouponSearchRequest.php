@@ -19,6 +19,13 @@ class CouponSearchRequest extends Request
 
     protected string $path = '/v1/product/monetize-api/v1/coupon/search';
 
+
+    public function getBody(): string
+    {
+        return json_encode($this->parameters->toArray());
+    }
+
+
     public function makeResponse(ResponseInterface $response): Response
     {
         return new CouponSearchResponse($response);
