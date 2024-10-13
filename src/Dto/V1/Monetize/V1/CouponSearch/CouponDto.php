@@ -25,7 +25,7 @@ final readonly class CouponDto
      * @param array $countryCodes Date from which the coupon can be applied.
      * @param DateTimeInterface $startDate Date after which the coupon will no longer apply.
      * @param DateTimeInterface $endDate Detailed information about the coupon, including usage conditions and limitations.
-     * @param string $description List of the country codes in ISO 3166-1 alpha-2 format where the coupon operates.
+     * @param string|null $description List of the country codes in ISO 3166-1 alpha-2 format where the coupon operates.
      * @param array $categoryIds List of merchant category identifiers.
      * @param DateTimeInterface $createdAt Date of the last update of the coupon in ISO 8601: 1988 (E) format.
      * @param DateTimeInterface $updatedAt Date of the last update of the coupon in ISO 8601: 1988 (E) format.
@@ -41,7 +41,7 @@ final readonly class CouponDto
         public array $countryCodes,
         public DateTimeInterface $startDate,
         public DateTimeInterface $endDate,
-        public string $description,
+        public ?string $description,
         public array $categoryIds,
         public DateTimeInterface $createdAt,
         public DateTimeInterface $updatedAt
