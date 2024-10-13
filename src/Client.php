@@ -44,40 +44,6 @@ class Client
     }
 
 
-    public function createRequest(RequestInterface $command): HttpRequestInterface
-    {
-        $this->request = $this->requestFactory->createRequest(
-            $command->getHttpMethod(),
-            $this->createUri($command)
-        );
-        $this->addHeaders($command);
-        $this->addBody($command);
-        return $this->request;
-    }
-
-
-    public function addHeaders(RequestInterface $command): self
-    {
-        foreach ($command->getHeaders() as $key => $value) {
-            $this->request = $this->request->withHeader($key, $value);
-        }
-        return $this;
-    }
-
-
-    public function addBody(RequestInterface $command): self
-    {
-        if (!empty($command->getBody())) {
-            $this->request->withBody(
-                $this->streamFactory->createStream(
-                    $command->getBody()
-                )
-            );
-        }
-        return $this;
-    }
-
-
     /**
      * @throws ServiceUnavailableException
      * @throws ServerErrorException
@@ -86,9 +52,24 @@ class Client
      */
     public function call(RequestInterface $command): Response
     {
+        $this->request = $this->requestFactory->createRequest(
+            $command->getHttpMethod(),
+            $this->createUri($command)
+        );
+
+        foreach ($command->getHeaders() as $key => $value) {
+            $this->request = $this->request->withHeader($key, $value);
+        }
+
+        $this->request = $this->request->withBody(
+            $this->streamFactory->createStream(
+                $command->getBody()
+            )
+        );
+
         try {
             $response = $this->client->sendRequest(
-                $this->createRequest($command)
+                $this->request
             );
         } catch (ClientExceptionInterface $e) {
             throw new ClientErrorException($e->getMessage(), $e->getCode(), $e);
