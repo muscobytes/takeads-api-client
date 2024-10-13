@@ -31,6 +31,9 @@ abstract readonly class RequestParameters implements RequestParametersInterface
 
     public function toArray(bool $transformBoolean = false): array
     {
-        return $transformBoolean ? $this->transformBoolean(get_object_vars($this)) : get_object_vars($this);
+        return $transformBoolean ?
+            $this->transformBoolean(get_object_vars($this)) :
+            $this->removeNullValues(get_object_vars($this))
+            ;
     }
 }
