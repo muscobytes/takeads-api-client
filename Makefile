@@ -1,11 +1,12 @@
 #!/usr/bin/env make
 # SHELL = sh -xv
 
-TAG := muscobytes/php-cli-8.3
+PHP_VERSION := 8.2
+
+TAG := muscobytes/php-cli-$(PHP_VERSION)
 
 DOCKER_RUN := docker run -ti \
-				-v "./:/var/www/html" \
-				-v "./.docker/php-8.3/etc/php.ini:/usr/local/etc/php/php.ini"
+				-v "./:/var/www/html"
 
 .PHONY: help
 help:  ## Shows this help message
@@ -14,7 +15,9 @@ help:  ## Shows this help message
 
 .PHONY: build
 build:
-	docker build -f ".docker/php-8.3/Dockerfile" -t ${TAG} .
+	docker build \
+		--file ".docker/php/$(PHP_VERSION)/Dockerfile" \
+		--tag ${TAG} .
 
 .PHONY: shell
 shell:
