@@ -29,8 +29,8 @@ test:
 
 .PHONY: tag
 tag:
-	git tag $(shell cat ./composer.json | jq -r .version)
+	git tag v$(shell cat ./composer.json | jq -r .version)
 
 .PHONY: untag
 untag:
-	git tag -d $(shell cat ./composer.json | jq -r .version)
+	git tag -d v$(shell cat ./composer.json | jq -r .version)
