@@ -5,11 +5,11 @@ namespace Muscobytes\TakeadsApi;
 
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
-use Muscobytes\TakeadsApi\Dto\Response;
 use Muscobytes\TakeadsApi\Exceptions\ClientErrorException;
 use Muscobytes\TakeadsApi\Exceptions\ServerErrorException;
 use Muscobytes\TakeadsApi\Exceptions\ServiceUnavailableException;
 use Muscobytes\TakeadsApi\Exceptions\UnknownErrorException;
+use Muscobytes\TakeadsApi\Interfaces\ResponseInterface;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -50,7 +50,7 @@ class Client
      * @throws ClientErrorException
      * @throws UnknownErrorException
      */
-    public function call(RequestInterface $command): Response
+    public function call(RequestInterface $command): ResponseInterface
     {
         $this->request = $this->requestFactory->createRequest(
             $command->getHttpMethod(),
