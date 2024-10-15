@@ -2,7 +2,9 @@
 
 namespace Muscobytes\TakeadsApi\Exceptions;
 
-class UnknownErrorException extends \Exception
+use Exception;
+
+class UnknownErrorException extends Exception
 {
     //
 }

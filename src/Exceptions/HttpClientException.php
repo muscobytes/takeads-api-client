@@ -2,7 +2,9 @@
 
 namespace Muscobytes\TakeadsApi\Exceptions;
 
-class HttpClientException extends \Exception
+use Exception;
+
+class HttpClientException extends Exception
 {
 
 }
