@@ -5,7 +5,7 @@ namespace Muscobytes\TakeadsApi\Dto;
 use Muscobytes\TakeadsApi\Interfaces\RequestParametersInterface;
 use Muscobytes\TakeadsApi\Traits\ToArray;
 
-abstract readonly class RequestParameters implements RequestParametersInterface
+abstract class RequestParameters implements RequestParametersInterface
 {
     use ToArray;
 }
