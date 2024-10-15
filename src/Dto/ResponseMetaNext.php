@@ -2,7 +2,7 @@
 
 namespace Muscobytes\TakeadsApi\Dto;
 
-readonly class ResponseMetaNext
+final class ResponseMetaNext
 {
     public function __construct(
         public string $next

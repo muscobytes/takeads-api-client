@@ -2,7 +2,7 @@
 
 namespace Muscobytes\TakeadsApi\Dto;
 
-readonly class ResponseMetaOffset
+final class ResponseMetaOffset
 {
     public function __construct(
         public int $offset,
