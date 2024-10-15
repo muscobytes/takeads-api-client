@@ -8,7 +8,7 @@ use Muscobytes\TakeadsApi\Dto\RequestParameters;
  * Get affiliate link
  * https://developers.takeads.com/knowledge-base/article/get-affiliate-link
  */
-final readonly class ResolveRequestParameters extends RequestParameters
+final class ResolveRequestParameters extends RequestParameters
 {
     /**
      * @param array<string> $iris List of links that you want to affiliate (IRI, RFC 3987).

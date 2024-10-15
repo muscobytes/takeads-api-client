@@ -9,7 +9,7 @@ use Muscobytes\TakeadsApi\Enums\StatusEnum;
  * Get report on actions
  * https://developers.takeads.com/knowledge-base/article/get-report-on-actions
  */
-readonly class ActionRequestParameters extends RequestParameters
+final class ActionRequestParameters extends RequestParameters
 {
     /**
      * @param string|null $updatedAtFrom Earliest date of the last update of actions.

@@ -8,7 +8,7 @@ use Muscobytes\TakeadsApi\Dto\RequestParameters;
  * Search for coupons
  * https://developers.takeads.com/knowledge-base/article/search-for-coupons
  */
-final readonly class CouponSearchRequestParameters extends RequestParameters
+final class CouponSearchRequestParameters extends RequestParameters
 {
     /**
      * @param array $iris List of links to the advertiser or product that you search a coupon for.

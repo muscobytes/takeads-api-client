@@ -8,7 +8,7 @@ use Muscobytes\TakeadsApi\Dto\RequestParameters;
  * Get coupons
  * https://developers.takeads.com/knowledge-base/article/get-coupons
  */
-final readonly class CouponsRequestParameters extends RequestParameters
+final class CouponsRequestParameters extends RequestParameters
 {
     public function __construct(
         public ?string $isActive = null,

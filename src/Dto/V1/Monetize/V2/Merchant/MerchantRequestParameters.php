@@ -8,7 +8,7 @@ use Muscobytes\TakeadsApi\Dto\RequestParameters;
  * Get list of merchants
  * https://developers.takeads.com/knowledge-base/article/get-list-of-merchants
  */
-final readonly class MerchantRequestParameters extends RequestParameters
+final class MerchantRequestParameters extends RequestParameters
 {
     /**
      * @param string|null $next Pointer (integer) to the next page of the merchant list. If specified, a list

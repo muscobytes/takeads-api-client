@@ -8,7 +8,7 @@ use Muscobytes\TakeadsApi\Dto\RequestParameters;
  * Get report on clicks
  * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
  */
-final readonly class ClickRequestParameters extends RequestParameters
+final class ClickRequestParameters extends RequestParameters
 {
     /**
      * @param string|null $dateFrom Starting point of the reporting period.
