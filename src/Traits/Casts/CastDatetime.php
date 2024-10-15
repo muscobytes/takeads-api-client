@@ -2,17 +2,20 @@
 
 namespace Muscobytes\TakeadsApi\Traits\Casts;
 
-use \DateTime;
+use DateTime;
 
 trait CastDatetime
 {
-    const FORMAT_ISO_8601 = 'Y-m-d\TH:i:s.vp';
+    public static string $FORMAT_ISO_8601 = 'Y-m-d\TH:i:s.vp';
 
     protected static function castDatetime(
         string $timestamp,
-        string $format = self::FORMAT_ISO_8601
+        string $format = null
     ): DateTime|false
     {
-        return DateTime::createFromFormat($format, $timestamp);
+        return DateTime::createFromFormat(
+            is_null($format) ? static::$FORMAT_ISO_8601 : $format,
+            $timestamp
+        );
     }
 }
