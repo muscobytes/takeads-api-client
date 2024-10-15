@@ -2,7 +2,7 @@
 
 namespace Muscobytes\TakeadsApi\Traits;
 
-trait toArray
+trait ToArray
 {
     public function removeNullValues(array $parameters): array
     {
