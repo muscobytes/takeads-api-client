@@ -1,7 +1,7 @@
 #!/usr/bin/env make
 # SHELL = sh -xv
 
-PHP_VERSION := 8.2
+PHP_VERSION := 8.1
 
 TAG := muscobytes/php-cli-$(PHP_VERSION)
 

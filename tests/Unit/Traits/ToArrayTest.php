@@ -5,15 +5,14 @@ namespace Muscobytes\TakeadsApi\Tests\Unit\Traits;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
 use Muscobytes\TakeadsApi\Tests\BaseTest;
 use Muscobytes\TakeadsApi\Traits\ToArray;
-use PHPUnit\Framework\Attributes\CoversMethod;
 
-
-#[CoversMethod(ToArray::class, 'toArray')]
 class ToArrayTest extends BaseTest
 {
     use ToArray;
 
-
+    /**
+     * @covers ToArray::toArray
+     */
     public function testToArray()
     {
         $dto = new ResolveRequestParameters(
