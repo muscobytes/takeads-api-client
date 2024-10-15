@@ -23,7 +23,6 @@ class ResolveRequest extends Request
         'Content-Type' => 'application/json'
     ];
 
-
     public function getBody(): string
     {
         return json_encode($this->parameters->toArray());
