@@ -12,7 +12,7 @@ final readonly class ResolveRequestParameters extends RequestParameters
 {
     /**
      * @param array<string> $iris List of links that you want to affiliate (IRI, RFC 3987).
-     * @param string $subId SubID parameter that you would like to add to the affiliate link.
+     * @param string|null $subId SubID parameter that you would like to add to the affiliate link.
      *      Only one SubID can be sent in each request.
      *      If you are sending several links in one request, the specified SubID will be added to each of them.
      *      SubID format:
@@ -22,7 +22,7 @@ final readonly class ResolveRequestParameters extends RequestParameters
      */
     public function __construct(
         public array $iris,
-        public string $subId = '',
+        public ?string $subId = null,
         public bool $withImages = false
     )
     {
