@@ -19,8 +19,6 @@ class CouponsRequest extends Request
 
     protected string $path = '/v1/product/monetize-api/v1/coupon';
 
-
-
     public function makeResponse(ResponseInterface $response): Response
     {
         return new CouponsResponse($response);

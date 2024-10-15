@@ -17,7 +17,6 @@ class ActionRequest extends Request
     use Get;
     use AccountKey;
 
-
     private string $path = 'v3/api/stats/action';
 
     public function makeResponse(ResponseInterface $response): Response

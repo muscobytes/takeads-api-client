@@ -19,7 +19,6 @@ class ClickRequest extends Request
 
     protected string $path = 'v1/api/stats/click';
 
-
     public function makeResponse(ResponseInterface $response): Response
     {
         return new ClickResponse($response);
