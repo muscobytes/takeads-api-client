@@ -3,6 +3,7 @@
 namespace Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click;
 
 use DateTimeInterface;
+use Muscobytes\TakeadsApi\Dto\Dto;
 use Muscobytes\TakeadsApi\Enums\ProductIdEnum;
 use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 
@@ -10,7 +11,7 @@ use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
  * Get report on clicks
  * https://developers.takeads.com/knowledge-base/article/get-report-on-clicks
  */
-final readonly class ClickDto
+final class ClickDto extends Dto
 {
     use CastDatetime;
 

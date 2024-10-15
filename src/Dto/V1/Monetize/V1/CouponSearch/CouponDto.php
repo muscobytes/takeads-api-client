@@ -3,13 +3,14 @@
 namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch;
 
 use DateTimeInterface;
+use Muscobytes\TakeadsApi\Dto\Dto;
 use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 
 /**
  * Search for coupons
  * https://developers.takeads.com/knowledge-base/article/search-for-coupons
  */
-final readonly class CouponDto
+final class CouponDto extends Dto
 {
     use CastDatetime;
 

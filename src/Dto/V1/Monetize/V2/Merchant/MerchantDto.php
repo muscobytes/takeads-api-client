@@ -3,13 +3,14 @@
 namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant;
 
 use DateTimeInterface;
+use Muscobytes\TakeadsApi\Dto\Dto;
 use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 
 /**
  * Get list of merchants
  * https://developers.takeads.com/knowledge-base/article/get-list-of-merchants
  */
-final readonly class MerchantDto
+final class MerchantDto extends Dto
 {
     use CastDatetime;
 

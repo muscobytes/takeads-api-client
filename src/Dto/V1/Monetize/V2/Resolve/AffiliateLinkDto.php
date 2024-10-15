@@ -2,7 +2,9 @@
 
 namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve;
 
-final readonly class AffiliateLinkDto
+use Muscobytes\TakeadsApi\Dto\Dto;
+
+final class AffiliateLinkDto extends Dto
 {
     /**
      * @param string $iri Link sent in the request.

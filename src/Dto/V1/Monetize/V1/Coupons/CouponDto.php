@@ -2,11 +2,13 @@
 
 namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons;
 
+use Muscobytes\TakeadsApi\Dto\Dto;
+
 /**
  * Coupon DTO
  * https://developers.takeads.com/knowledge-base/article/get-coupons
  */
-final readonly class CouponDto
+final class CouponDto extends Dto
 {
     /**
      * @param string $couponId Coupon unique identifier

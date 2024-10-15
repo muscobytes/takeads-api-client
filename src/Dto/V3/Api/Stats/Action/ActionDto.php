@@ -3,6 +3,7 @@
 namespace Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action;
 
 use DateTimeInterface;
+use Muscobytes\TakeadsApi\Dto\Dto;
 use Muscobytes\TakeadsApi\Enums\PricingModelEnum;
 use Muscobytes\TakeadsApi\Enums\StatusEnum;
 use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
@@ -11,7 +12,7 @@ use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
  * Get report on actions
  * https://developers.takeads.com/knowledge-base/article/get-report-on-actions
  */
-final readonly class ActionDto
+final class ActionDto extends Dto
 {
     use CastDatetime;
 
