@@ -14,11 +14,11 @@ final class ClickResponse extends Response
 {
     use HasMetaOffset;
 
-    public function getData(): Generator
+    public function getPayload(): array
     {
-        yield array_map(
+        return array_map(
             fn (array $item) => ClickDto::fromArray($item),
-            json_decode($this->getResponse()->getBody(), true)['data']
+            $this->getData()
         );
     }
 }

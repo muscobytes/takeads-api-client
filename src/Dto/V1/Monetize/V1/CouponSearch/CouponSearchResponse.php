@@ -11,11 +11,11 @@ use Muscobytes\TakeadsApi\Dto\Response;
  */
 class CouponSearchResponse extends Response
 {
-    public function getData(): Generator
+    public function getPayload(): array
     {
-        yield array_map(
+        return array_map(
             fn (array $item) => CouponSearchDto::fromArray($item),
-            json_decode($this->response->getBody(), true)['data']
+            $this->getData()
         );
     }
 }

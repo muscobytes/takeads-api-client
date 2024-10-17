@@ -19,4 +19,10 @@ abstract class Response implements ResponseInterface
     {
         return $this->response;
     }
+
+
+    public function getData(): array
+    {
+        return json_decode($this->getResponse()->getBody(), true)['data'];
+    }
 }

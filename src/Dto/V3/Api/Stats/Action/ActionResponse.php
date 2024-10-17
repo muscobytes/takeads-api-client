@@ -14,11 +14,11 @@ class ActionResponse extends Response
 {
     use HasMetaNext;
 
-    public function getData(): Generator
+    public function getPayload(): array
     {
-        yield array_map(
+        return array_map(
             fn (array $item) => ActionDto::fromArray($item),
-            json_decode($this->getResponse()->getBody(), true)['data']
+            $this->getData()
         );
     }
 }

@@ -14,11 +14,11 @@ final class CouponsResponse extends Response
 {
     use HasMetaNext;
 
-    public function getData(): Generator
+    public function getPayload(): array
     {
-        yield array_map(
+        return array_map(
             fn (array $item) => CouponDto::fromArray($item),
-            json_decode($this->response->getBody(), true)['data']
+            $this->getData()
         );
     }
 }
