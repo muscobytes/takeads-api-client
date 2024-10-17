@@ -11,11 +11,5 @@ use Muscobytes\TakeadsApi\Dto\Response;
  */
 final class ResolveResponse extends Response
 {
-    public function getPayload(): array
-    {
-        return array_map(
-            fn (array $item) => AffiliateLinkDto::fromArray($item),
-            $this->getData()
-        );
-    }
+    //
 }

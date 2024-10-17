@@ -13,12 +13,4 @@ use Muscobytes\TakeadsApi\Traits\HasMetaNext;
 class ActionResponse extends Response
 {
     use HasMetaNext;
-
-    public function getPayload(): array
-    {
-        return array_map(
-            fn (array $item) => ActionDto::fromArray($item),
-            $this->getData()
-        );
-    }
 }

@@ -13,12 +13,4 @@ use Muscobytes\TakeadsApi\Traits\HasMetaOffset;
 final class ClickResponse extends Response
 {
     use HasMetaOffset;
-
-    public function getPayload(): array
-    {
-        return array_map(
-            fn (array $item) => ClickDto::fromArray($item),
-            $this->getData()
-        );
-    }
 }

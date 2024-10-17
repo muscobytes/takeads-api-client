@@ -13,12 +13,4 @@ use Muscobytes\TakeadsApi\Traits\HasMetaNext;
 final class MerchantResponse extends Response
 {
     use HasMetaNext;
-
-    public function getPayload(): array
-    {
-        return array_map(
-            fn ($item) => MerchantDto::fromArray($item),
-            $this->getData()
-        );
-    }
 }

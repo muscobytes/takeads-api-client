@@ -11,11 +11,5 @@ use Muscobytes\TakeadsApi\Dto\Response;
  */
 class CouponSearchResponse extends Response
 {
-    public function getPayload(): array
-    {
-        return array_map(
-            fn (array $item) => CouponSearchDto::fromArray($item),
-            $this->getData()
-        );
-    }
+    //
 }

@@ -13,12 +13,4 @@ use Muscobytes\TakeadsApi\Traits\HasMetaNext;
 final class CouponsResponse extends Response
 {
     use HasMetaNext;
-
-    public function getPayload(): array
-    {
-        return array_map(
-            fn (array $item) => CouponDto::fromArray($item),
-            $this->getData()
-        );
-    }
 }
