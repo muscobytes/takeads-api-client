@@ -4,7 +4,6 @@ namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons;
 
 use Muscobytes\TakeadsApi\Dto\Request;
 use Muscobytes\TakeadsApi\Dto\Response;
-use Muscobytes\TakeadsApi\Traits\Authorization\PlatformKey;
 use Muscobytes\TakeadsApi\Traits\Methods\Get;
 use Psr\Http\Message\ResponseInterface;
 
@@ -15,7 +14,6 @@ use Psr\Http\Message\ResponseInterface;
 class CouponsRequest extends Request
 {
     use Get;
-    use PlatformKey;
 
     protected string $path = '/v1/product/monetize-api/v1/coupon';
 

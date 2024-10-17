@@ -4,7 +4,6 @@ namespace Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action;
 
 use Muscobytes\TakeadsApi\Dto\Request;
 use Muscobytes\TakeadsApi\Dto\Response;
-use Muscobytes\TakeadsApi\Traits\Authorization\AccountKey;
 use Muscobytes\TakeadsApi\Traits\Methods\Get;
 use Psr\Http\Message\ResponseInterface;
 
@@ -15,7 +14,6 @@ use Psr\Http\Message\ResponseInterface;
 class ActionRequest extends Request
 {
     use Get;
-    use AccountKey;
 
     private string $path = 'v3/api/stats/action';
 
