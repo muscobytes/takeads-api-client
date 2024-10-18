@@ -27,6 +27,7 @@ abstract class Response implements ResponseInterface
         //
     }
 
+
     public function getResponse(): HttpResponseInterface
     {
         return $this->response;
