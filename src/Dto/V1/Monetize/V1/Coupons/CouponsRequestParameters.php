@@ -40,6 +40,7 @@ final class CouponsRequestParameters extends RequestParameters
             'startDateBefore',
             'endDateAfter',
             'languageCodes',
+            'categoryIds',
             'countryCodes',
             'next',
             'limit'
