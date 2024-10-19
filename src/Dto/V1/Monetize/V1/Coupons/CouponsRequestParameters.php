@@ -5,6 +5,7 @@ namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons;
 use DateTimeInterface;
 use Muscobytes\TakeadsApi\Dto\RequestParameters;
 use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
+use Muscobytes\TakeadsApi\Traits\Parameters\CastParameters;
 
 /**
  * Get coupons
@@ -13,7 +14,40 @@ use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 final class CouponsRequestParameters extends RequestParameters
 {
     use CastDatetime;
+    use CastParameters;
 
+    protected static array $properties = [
+        'isActive',
+        'updatedAtFrom',
+        'updatedAtTo',
+        'startDateBefore',
+        'endDateAfter',
+        'languageCodes',
+        'categoryIds',
+        'countryCodes',
+        'next',
+        'limit'
+    ];
+
+    protected static array $cast = [
+        'updatedAtFrom' => 'datetime',
+        'updatedAtTo' => 'datetime',
+        'startDateBefore' => 'datetime',
+        'endDateAfter' => 'datetime',
+    ];
+
+    /**
+     * @param bool|null $isActive Flag indicating if a coupon is active.
+     * @param DateTimeInterface|null $updatedAtFrom Minimum date of the last update of the coupon in ISO 8601: 1988 (E) format.
+     * @param DateTimeInterface|null $updatedAtTo Maximum date of the last update of the coupon in ISO 8601: 1988 (E) format.
+     * @param DateTimeInterface|null $startDateBefore Date until which the coupon became active in ISO 8601: 1988 (E) format.
+     * @param DateTimeInterface|null $endDateAfter Date after which the coupon will become inactive in ISO 8601: 1988 (E) format.
+     * @param array|null $languageCodes ISO 639-1 alpha-2 language code supported by the coupon merchant.
+     * @param array|null $categoryIds Coupon category identifiers.
+     * @param array|null $countryCodes ISO 639-1 alpha-2 language codes.
+     * @param string|null $next Identifier of the next page to retrieve.
+     * @param int|null $limit Maximum number of entries to return. The default value is 100.
+     */
     public function __construct(
         public ?bool              $isActive = null,
         public ?DateTimeInterface $updatedAtFrom = null,
@@ -31,38 +65,8 @@ final class CouponsRequestParameters extends RequestParameters
     }
 
 
-    public static function fromArray(array $array): self
+    public static function fromArray(array $parameters): self
     {
-        $properties = [
-            'isActive',
-            'updatedAtFrom',
-            'updatedAtTo',
-            'startDateBefore',
-            'endDateAfter',
-            'languageCodes',
-            'categoryIds',
-            'countryCodes',
-            'next',
-            'limit'
-        ];
-
-        return new self(...array_map(
-            function ($propertyName) use ($array) {
-                $castDateTime = [
-                    'updatedAtFrom',
-                    'updatedAtTo',
-                    'startDateBefore',
-                    'endDateAfter',
-                ];
-                if (key_exists($propertyName, $array)) {
-                    if (in_array($propertyName, $castDateTime)) {
-                        return self::castDatetime($array[$propertyName] . 'T00:00:00.000Z');
-                    }
-                    return $array[$propertyName];
-                }
-                return null;
-            },
-            $properties
-        ));
+        return new self(...self::castParameters($parameters));
     }
 }

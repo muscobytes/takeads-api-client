@@ -14,6 +14,7 @@ class CouponsRequestParametersTest extends BaseTest
     #[DataProvider('createCouponRequestParametersFromArrayDataProvider')]
     public function testCreateCouponRequestParametersFromArray(array $parameters)
     {
+        $format = 'Y-m-d\TH:i:s.vp';
         $couponsRequestParameters = CouponsRequestParameters::fromArray($parameters);
         $this->assertInstanceOf(CouponsRequestParameters::class, $couponsRequestParameters);
 
@@ -28,28 +29,28 @@ class CouponsRequestParametersTest extends BaseTest
             $this->assertNull($couponsRequestParameters->updatedAtFrom);
         } else {
             $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->updatedAtFrom);
-            $this->assertSame($parameters['updatedAtFrom'], $couponsRequestParameters->updatedAtFrom->format('Y-m-d'));
+            $this->assertSame($parameters['updatedAtFrom'], $couponsRequestParameters->updatedAtFrom->format($format));
         }
 
         if (is_null($parameters['updatedAtTo'])) {
             $this->assertNull($couponsRequestParameters->updatedAtTo);
         } else {
             $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->updatedAtTo);
-            $this->assertSame($parameters['updatedAtTo'], $couponsRequestParameters->updatedAtTo->format('Y-m-d'));
+            $this->assertSame($parameters['updatedAtTo'], $couponsRequestParameters->updatedAtTo->format($format));
         }
 
         if (is_null($parameters['startDateBefore'])) {
             $this->assertNull($couponsRequestParameters->startDateBefore);
         } else {
             $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->startDateBefore);
-            $this->assertSame($parameters['startDateBefore'], $couponsRequestParameters->startDateBefore->format('Y-m-d'));
+            $this->assertSame($parameters['startDateBefore'], $couponsRequestParameters->startDateBefore->format($format));
         }
 
         if (is_null($parameters['endDateAfter'])) {
             $this->assertNull($couponsRequestParameters->endDateAfter);
         } else {
             $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->endDateAfter);
-            $this->assertSame($parameters['endDateAfter'], $couponsRequestParameters->endDateAfter->format('Y-m-d'));
+            $this->assertSame($parameters['endDateAfter'], $couponsRequestParameters->endDateAfter->format($format));
         }
 
         if (is_null($parameters['languageCodes'])) {
@@ -102,22 +103,22 @@ class CouponsRequestParametersTest extends BaseTest
             ],
             [
                 'parameters' => [
-                    'updatedAtFrom' => '2024-10-10'
+                    'updatedAtFrom' => '2024-10-10T00:00:00.000Z',
                 ]
             ],
             [
                 'parameters' => [
-                    'updatedAtTo' => '2023-04-11'
+                    'updatedAtTo' => '2023-04-11T00:00:00.000Z'
                 ]
             ],
             [
                 'parameters' => [
-                    'startDateBefore' => '1979-02-19'
+                    'startDateBefore' => '1979-02-19T00:00:00.000Z'
                 ]
             ],
             [
                 'parameters' => [
-                    'endDateAfter' => '2009-12-18'
+                    'endDateAfter' => '2009-12-18T00:00:00.000Z'
                 ]
             ],
             [
