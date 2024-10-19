@@ -3,6 +3,7 @@
 namespace Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click;
 
 use Muscobytes\TakeadsApi\Dto\RequestParameters;
+use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 
 /**
  * Get report on clicks
@@ -10,6 +11,8 @@ use Muscobytes\TakeadsApi\Dto\RequestParameters;
  */
 final class ClickRequestParameters extends RequestParameters
 {
+    use CastDatetime;
+
     /**
      * @param string|null $dateFrom Starting point of the reporting period.
      *      This parameter can't be used without the ending point of the filtering period — dateTo.
@@ -45,5 +48,26 @@ final class ClickRequestParameters extends RequestParameters
     )
     {
         //
+    }
+
+    public static function fromArray(array $parameters): self
+    {
+        return new self(
+            dateFrom: isset($parameters['dateFrom'])
+                ? self::castDate($parameters['dateFrom'])
+                : null,
+            dateTo: isset($parameters['dateTo'])
+                ? self::castDate($parameters['dateTo'])
+                : null,
+            date: isset($parameters['date'])
+                ? self::castDate($parameters['date'])
+                : null,
+            days: $parameters['days'] ?? null,
+            programId: $parameters['programId'] ?? null,
+            subId: $parameters['subId'] ?? null,
+            adspaceId: $parameters['adspaceId'] ?? null,
+            offset: $parameters['offset'] ?? null,
+            limit: $parameters['limit'] ?? null
+        );
     }
 }

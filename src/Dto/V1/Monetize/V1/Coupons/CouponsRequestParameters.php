@@ -5,7 +5,6 @@ namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons;
 use DateTimeInterface;
 use Muscobytes\TakeadsApi\Dto\RequestParameters;
 use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
-use Muscobytes\TakeadsApi\Traits\Parameters\CastParameters;
 
 /**
  * Get coupons
@@ -14,27 +13,6 @@ use Muscobytes\TakeadsApi\Traits\Parameters\CastParameters;
 final class CouponsRequestParameters extends RequestParameters
 {
     use CastDatetime;
-    use CastParameters;
-
-    protected static array $properties = [
-        'isActive',
-        'updatedAtFrom',
-        'updatedAtTo',
-        'startDateBefore',
-        'endDateAfter',
-        'languageCodes',
-        'categoryIds',
-        'countryCodes',
-        'next',
-        'limit'
-    ];
-
-    protected static array $cast = [
-        'updatedAtFrom' => 'datetime',
-        'updatedAtTo' => 'datetime',
-        'startDateBefore' => 'datetime',
-        'endDateAfter' => 'datetime',
-    ];
 
     /**
      * @param bool|null $isActive Flag indicating if a coupon is active.
@@ -67,6 +45,25 @@ final class CouponsRequestParameters extends RequestParameters
 
     public static function fromArray(array $parameters): self
     {
-        return new self(...self::castParameters($parameters));
+        return new self(
+            isActive: $parameters['isActive'] ?? null,
+            updatedAtFrom: isset($parameters['updatedAtFrom'])
+                ? self::castDate($parameters['updatedAtFrom'])
+                : null,
+            updatedAtTo: isset($parameters['updatedAtTo'])
+                ? self::castDate($parameters['updatedAtTo'])
+                : null,
+            startDateBefore: isset($parameters['startDateBefore'])
+                ? self::castDate($parameters['startDateBefore'])
+                : null,
+            endDateAfter: isset($parameters['endDateAfter'])
+                ? self::castDate($parameters['endDateAfter'])
+                : null,
+            languageCodes: $parameters['languageCodes'] ?? null,
+            categoryIds: $parameters['categoryIds'] ?? null,
+            countryCodes: $parameters['countryCodes'] ?? null,
+            next: $parameters['next'] ?? null,
+            limit: $parameters['limit'] ?? null
+        );
     }
 }

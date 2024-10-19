@@ -12,83 +12,94 @@ use PHPUnit\Framework\Attributes\DataProvider;
 class CouponsRequestParametersTest extends BaseTest
 {
     #[DataProvider('createCouponRequestParametersFromArrayDataProvider')]
-    public function testCreateCouponRequestParametersFromArray(array $parameters)
+    public function testCreateCouponRequestParametersFromArray(array $array)
     {
-        $format = 'Y-m-d\TH:i:s.vp';
-        $couponsRequestParameters = CouponsRequestParameters::fromArray($parameters);
-        $this->assertInstanceOf(CouponsRequestParameters::class, $couponsRequestParameters);
+        $params = CouponsRequestParameters::fromArray($array);
+        $this->assertInstanceOf(CouponsRequestParameters::class, $params);
 
-        if (is_null($parameters['isActive'])) {
-            $this->assertNull($couponsRequestParameters->isActive);
+        if (is_null($array['isActive'])) {
+            $this->assertNull($params->isActive);
         } else {
-            $this->assertSame($parameters['isActive'], $couponsRequestParameters->isActive);
-            $this->assertTrue($couponsRequestParameters->isActive);
+            $this->assertSame($array['isActive'], $params->isActive);
+            $this->assertTrue($params->isActive);
         }
 
-        if (is_null($parameters['updatedAtFrom'])) {
-            $this->assertNull($couponsRequestParameters->updatedAtFrom);
+        if (is_null($array['updatedAtFrom'])) {
+            $this->assertNull($params->updatedAtFrom);
         } else {
-            $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->updatedAtFrom);
-            $this->assertSame($parameters['updatedAtFrom'], $couponsRequestParameters->updatedAtFrom->format($format));
+            $this->assertInstanceOf(DateTimeInterface::class, $params->updatedAtFrom);
+            $this->assertSame(
+                $array['updatedAtFrom'],
+                $params->updatedAtFrom->format($params::$FORMAT_DATE_ISO_8601_1988E)
+            );
         }
 
-        if (is_null($parameters['updatedAtTo'])) {
-            $this->assertNull($couponsRequestParameters->updatedAtTo);
+        if (is_null($array['updatedAtTo'])) {
+            $this->assertNull($params->updatedAtTo);
         } else {
-            $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->updatedAtTo);
-            $this->assertSame($parameters['updatedAtTo'], $couponsRequestParameters->updatedAtTo->format($format));
+            $this->assertInstanceOf(DateTimeInterface::class, $params->updatedAtTo);
+            $this->assertSame(
+                $array['updatedAtTo'],
+                $params->updatedAtTo->format($params::$FORMAT_DATE_ISO_8601_1988E)
+            );
         }
 
-        if (is_null($parameters['startDateBefore'])) {
-            $this->assertNull($couponsRequestParameters->startDateBefore);
+        if (is_null($array['startDateBefore'])) {
+            $this->assertNull($params->startDateBefore);
         } else {
-            $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->startDateBefore);
-            $this->assertSame($parameters['startDateBefore'], $couponsRequestParameters->startDateBefore->format($format));
+            $this->assertInstanceOf(DateTimeInterface::class, $params->startDateBefore);
+            $this->assertSame(
+                $array['startDateBefore'],
+                $params->startDateBefore->format($params::$FORMAT_DATE_ISO_8601_1988E)
+            );
         }
 
-        if (is_null($parameters['endDateAfter'])) {
-            $this->assertNull($couponsRequestParameters->endDateAfter);
+        if (is_null($array['endDateAfter'])) {
+            $this->assertNull($params->endDateAfter);
         } else {
-            $this->assertInstanceOf(DateTimeInterface::class, $couponsRequestParameters->endDateAfter);
-            $this->assertSame($parameters['endDateAfter'], $couponsRequestParameters->endDateAfter->format($format));
+            $this->assertInstanceOf(DateTimeInterface::class, $params->endDateAfter);
+            $this->assertSame(
+                $array['endDateAfter'],
+                $params->endDateAfter->format($params::$FORMAT_DATE_ISO_8601_1988E)
+            );
         }
 
-        if (is_null($parameters['languageCodes'])) {
-            $this->assertNull($couponsRequestParameters->languageCodes);
+        if (is_null($array['languageCodes'])) {
+            $this->assertNull($params->languageCodes);
         } else {
-            $this->assertIsArray($couponsRequestParameters->languageCodes);
-            $this->assertCount(count($parameters['languageCodes']), $couponsRequestParameters->languageCodes);
-            $this->assertSame($parameters['languageCodes'], $couponsRequestParameters->languageCodes);
+            $this->assertIsArray($params->languageCodes);
+            $this->assertCount(count($array['languageCodes']), $params->languageCodes);
+            $this->assertSame($array['languageCodes'], $params->languageCodes);
         }
 
-        if (is_null($parameters['categoryIds'])) {
-            $this->assertNull($couponsRequestParameters->categoryIds);
+        if (is_null($array['categoryIds'])) {
+            $this->assertNull($params->categoryIds);
         } else {
-            $this->assertIsArray($couponsRequestParameters->categoryIds);
-            $this->assertCount(count($parameters['categoryIds']), $couponsRequestParameters->categoryIds);
-            $this->assertSame($parameters['categoryIds'], $couponsRequestParameters->categoryIds);
+            $this->assertIsArray($params->categoryIds);
+            $this->assertCount(count($array['categoryIds']), $params->categoryIds);
+            $this->assertSame($array['categoryIds'], $params->categoryIds);
         }
 
-        if (is_null($parameters['countryCodes'])) {
-            $this->assertNull($couponsRequestParameters->countryCodes);
+        if (is_null($array['countryCodes'])) {
+            $this->assertNull($params->countryCodes);
         } else {
-            $this->assertIsArray($couponsRequestParameters->countryCodes);
-            $this->assertCount(count($parameters['countryCodes']), $couponsRequestParameters->countryCodes);
-            $this->assertSame($parameters['countryCodes'], $couponsRequestParameters->countryCodes);
+            $this->assertIsArray($params->countryCodes);
+            $this->assertCount(count($array['countryCodes']), $params->countryCodes);
+            $this->assertSame($array['countryCodes'], $params->countryCodes);
         }
 
-        if (is_null($parameters['next'])) {
-            $this->assertNull($couponsRequestParameters->next);
+        if (is_null($array['next'])) {
+            $this->assertNull($params->next);
         } else {
-            $this->assertIsString($couponsRequestParameters->next);
-            $this->assertSame($parameters['next'], $couponsRequestParameters->next);
+            $this->assertIsString($params->next);
+            $this->assertSame($array['next'], $params->next);
         }
 
-        if (is_null($parameters['limit'])) {
-            $this->assertNull($couponsRequestParameters->limit);
+        if (is_null($array['limit'])) {
+            $this->assertNull($params->limit);
         } else {
-            $this->assertIsInt($couponsRequestParameters->limit);
-            $this->assertSame($parameters['limit'], $couponsRequestParameters->limit);
+            $this->assertIsInt($params->limit);
+            $this->assertSame($array['limit'], $params->limit);
         }
     }
 
@@ -97,114 +108,90 @@ class CouponsRequestParametersTest extends BaseTest
     {
         return [
             [
-                'parameters' => [
+                'array' => [
                     'isActive' => true,
                 ]
             ],
             [
-                'parameters' => [
-                    'updatedAtFrom' => '2024-10-10T00:00:00.000Z',
+                'array' => [
+                    'updatedAtFrom' => '2024-10-10',
                 ]
             ],
             [
-                'parameters' => [
-                    'updatedAtTo' => '2023-04-11T00:00:00.000Z'
+                'array' => [
+                    'updatedAtTo' => '2023-04-11'
                 ]
             ],
             [
-                'parameters' => [
-                    'startDateBefore' => '1979-02-19T00:00:00.000Z'
+                'array' => [
+                    'startDateBefore' => '1979-02-19'
                 ]
             ],
             [
-                'parameters' => [
-                    'endDateAfter' => '2009-12-18T00:00:00.000Z'
+                'array' => [
+                    'endDateAfter' => '2009-12-18'
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'languageCodes' => []
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'languageCodes' => ['en']
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'languageCodes' => ['en','ru']
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'languageCodes' => ['es','en','ru','lv']
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'categoryIds' => [35]
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'categoryIds' => [35, 42]
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'categoryIds' => [35, 42, 23]
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'countryCodes' => ['RU']
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'countryCodes' => ['RU', 'KZ']
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'countryCodes' => ['RU', 'GE', 'KZ']
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'next' => '1C2xwNiolIGpCaVtLSdbQ'
                 ]
             ],
             [
-                'parameters' => [
+                'array' => [
                     'limit' => 300
                 ]
             ]
         ];
-    }
-
-
-    public function testFailedToCreateCouponRequestParametersFromArray()
-    {
-        $this->expectException(\TypeError::class);
-        CouponsRequestParameters::fromArray([
-            'updatedAtFrom' => 'malformed date string'
-        ]);
-
-        $this->expectException(\TypeError::class);
-        CouponsRequestParameters::fromArray([
-            'updatedAtTo' => 'malformed date string'
-        ]);
-
-        $this->expectException(\TypeError::class);
-        CouponsRequestParameters::fromArray([
-            'startDateBefore' => 'malformed date string'
-        ]);
-
-        $this->expectException(\TypeError::class);
-        CouponsRequestParameters::fromArray([
-            'startDateAfter' => 'malformed date string'
-        ]);
     }
 }

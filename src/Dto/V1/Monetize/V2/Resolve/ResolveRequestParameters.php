@@ -28,4 +28,14 @@ final class ResolveRequestParameters extends RequestParameters
     {
         //
     }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(
+            iris: $array['iris'] ?? [],
+            subId: $array['subId'] ?? null,
+            withImages: $array['withImages'] ?? false,
+        );
+    }
 }

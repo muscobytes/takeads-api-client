@@ -3,6 +3,7 @@
 namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch;
 
 use Muscobytes\TakeadsApi\Dto\RequestParameters;
+use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
 
 /**
  * Search for coupons
@@ -29,5 +30,16 @@ final class CouponSearchRequestParameters extends RequestParameters
     )
     {
         //
+    }
+
+
+    public static function fromArray(array $parameters): self
+    {
+        return new self(
+            iris: $parameters['iris'] ?? null,
+            languageCodes: $parameters['languageCodes'] ?? null,
+            categoryIds: $parameters['categoryIds'] ?? null,
+            subId: $parameters['subId'] ?? null
+        );
     }
 }
