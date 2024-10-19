@@ -2,7 +2,7 @@
 
 namespace Muscobytes\TakeadsApi\Traits\Parameters;
 
-trait CastParameters
+trait CastProperties
 {
     public static function cast(string $name, mixed $value)
     {
@@ -11,7 +11,7 @@ trait CastParameters
     }
 
 
-    public static function castParameters(array $array): array
+    public static function castProperties(array $array): array
     {
         return array_map(
             function ($propertyName) use ($array) {
@@ -25,5 +25,4 @@ trait CastParameters
             static::$properties
         );
     }
-
 }
