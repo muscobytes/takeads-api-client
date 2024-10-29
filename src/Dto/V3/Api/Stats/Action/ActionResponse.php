@@ -2,7 +2,6 @@
 
 namespace Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action;
 
-use Generator;
 use Muscobytes\TakeadsApi\Dto\Response;
 use Muscobytes\TakeadsApi\Traits\HasMetaNext;
 
