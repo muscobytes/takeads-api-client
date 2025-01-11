@@ -6,13 +6,17 @@ trait ToArray
 {
     public function transformArray(
         array $array,
-        bool $transformBoolean
+        bool $transformBoolean,
+        string $format = 'Y-m-d'
     ): array
     {
         return array_map(
             fn (mixed $element) => match(gettype($element)) {
                 'boolean' => $transformBoolean ? $element ? 'true' : 'false' : $element,
-                'object' => $element->toArray(),
+                'object' => match(get_class($element)) {
+                    'DateTime' => $element->format($format),
+                    default => $element->toArray()
+                },
                 'array' => $this->transformArray($element, $transformBoolean),
                 default => $element
             },
