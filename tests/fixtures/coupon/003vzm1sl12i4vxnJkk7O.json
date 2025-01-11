@@ -1,0 +1,21 @@
+{
+  "couponId": "003vzm1sl12i4vxnJkk7O",
+  "trackingLink": "https://tatrck.com/h/1Hu30zXqC30pTdfjCNDiCJ9fD7PuRafhQpTF",
+  "isActive": true,
+  "name": "Tendance Cadeau - -5€ sur toute la boutique à partir de 25€ d’achats",
+  "code": "EFF5E",
+  "merchantId": 202544,
+  "imageUri": "https://monetizeamex.com/logos_v2/90x45/7878f4bbd60eea86eee0afd69669aaa8.gif",
+  "languageCodes": [
+    "fr"
+  ],
+  "countryCodes": [],
+  "startDate": "2023-03-08T23:00:00.000Z",
+  "endDate": "2030-01-01T00:00:00.000Z",
+  "description": "Value in euros : 5, Can be combined with other promotional offers : No, Can be combined with sales offers : No, Valid for the whole cart Without shipping cost, Valid for new clients only : No, Description and other conditions : Tendance Cadeau - -5€ sur toute la boutique à partir de 25€ d’achats",
+  "categoryIds": [
+    47
+  ],
+  "createdAt": "2024-04-12T10:37:28.583Z",
+  "updatedAt": "2024-06-24T14:03:47.153Z"
+}

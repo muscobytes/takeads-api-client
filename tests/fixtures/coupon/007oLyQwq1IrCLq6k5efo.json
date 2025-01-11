@@ -1,0 +1,23 @@
+{
+  "couponId": "007oLyQwq1IrCLq6k5efo",
+  "trackingLink": "https://tatrck.com/h/1Hu30zXqC30tRqnvKNTnCKboGqnnDcirPMPl",
+  "isActive": false,
+  "name": "Скидка 1 000 рублей на Умная колонка ЯНДЕКС Станция Миди с Zigbee",
+  "code": "MTS1",
+  "merchantId": 149353,
+  "imageUri": "https://monetizeamex.com/logos_v2/90x45/1ba4be374b58337e0b97d227a50dd32e.gif",
+  "languageCodes": [
+    "ru"
+  ],
+  "countryCodes": [
+    "RU"
+  ],
+  "startDate": "2024-06-14T00:00:00.000Z",
+  "endDate": "2024-06-16T23:59:00.000Z",
+  "description": null,
+  "categoryIds": [
+    58
+  ],
+  "createdAt": "2024-06-15T00:07:16.630Z",
+  "updatedAt": "2024-06-17T00:16:01.613Z"
+}

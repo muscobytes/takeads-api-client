@@ -1,0 +1,23 @@
+{
+  "couponId": "005oBmYPnxiwX2Vh1JQn7",
+  "trackingLink": "https://tatrck.com/h/1Hu30zXqC30rRq9jML1kU6btM39MQ35AKMut",
+  "isActive": false,
+  "name": "Fino al 2.3% di cashback, più un bonus di benvenuto per i nuovi utenti.",
+  "code": null,
+  "merchantId": 240725,
+  "imageUri": "https://monetizeamex.com/logos_v2/90x45/38264ad92c0f3f31aafea2065fd13d84.gif",
+  "languageCodes": [
+    "it"
+  ],
+  "countryCodes": [
+    "IT"
+  ],
+  "startDate": "2023-12-15T14:55:11.000Z",
+  "endDate": null,
+  "description": "Effettua un acquisto in questo negozio tramite il servizio di cashback Giftmio e ottieni fino a 2.3% dell'importo dell'ordine, oltre a un bonus di benvenuto per i nuovi utenti. La dimensione del bonus dipende dal paese, puoi verificarlo sul sito ufficiale di giftmio a https://giftmio.com/info/faqs/",
+  "categoryIds": [
+    72
+  ],
+  "createdAt": "2024-04-25T00:12:29.932Z",
+  "updatedAt": "2024-04-25T00:12:29.932Z"
+}
