@@ -3,6 +3,8 @@
 namespace Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons;
 
 use Muscobytes\TakeadsApi\Dto\Dto;
+use Muscobytes\TakeadsApi\Traits\Casts\CastDatetime;
+use DateTimeInterface;
 
 /**
  * Coupon DTO
@@ -10,6 +12,8 @@ use Muscobytes\TakeadsApi\Dto\Dto;
  */
 final class CouponDto extends Dto
 {
+    use CastDatetime;
+
     /**
      * @param string $couponId Coupon unique identifier
      * @param bool $isActive Flag indicating if a coupon is active
@@ -20,13 +24,13 @@ final class CouponDto extends Dto
      * @param string $imageUri URI to the coupon logo
      * @param array $languageCodes Array of languages supported by the website in ISO 639-1 alpha-2 format.
      *      If the value is empty, the coupon languages are unknown
-     * @param string $startDate Date from which the coupon can be applied
-     * @param string|null $endDate Date after which the coupon will no longer apply
+     * @param DateTimeInterface $startDate Date from which the coupon can be applied
+     * @param DateTimeInterface|null $endDate Date after which the coupon will no longer apply
      * @param string|null $description Detailed information about the coupon, including usage conditions and limitations
      * @param array $countryCodes List of country codes in ISO 3166-1 alpha-2 format where the coupon operates
      * @param array $categoryIds
-     * @param string $createdAt Date of the last update of the coupon in ISO 8601: 1988 (E) format
-     * @param string $updatedAt Date of the last update of the coupon in ISO 8601: 1988 (E) format
+     * @param DateTimeInterface $createdAt Date of the last update of the coupon in ISO 8601: 1988 (E) format
+     * @param DateTimeInterface $updatedAt Date of the last update of the coupon in ISO 8601: 1988 (E) format
      */
     public function __construct(
         public string $couponId,
@@ -37,13 +41,13 @@ final class CouponDto extends Dto
         public string $merchantId,
         public string $imageUri,
         public array $languageCodes,
-        public string $startDate,
-        public ?string $endDate,
+        public DateTimeInterface $startDate,
+        public ?DateTimeInterface $endDate,
         public ?string $description,
         public array $countryCodes,
         public array $categoryIds,
-        public string $createdAt,
-        public string $updatedAt,
+        public DateTimeInterface $createdAt,
+        public DateTimeInterface $updatedAt,
     )
     {
         //
@@ -52,6 +56,22 @@ final class CouponDto extends Dto
 
     public static function fromArray(array $array): self
     {
-        return new self(...$array);
+        return new self(
+            couponId: $array['couponId'],
+            isActive: $array['isActive'],
+            trackingLink: $array['trackingLink'],
+            name: $array['name'],
+            code: $array['code'],
+            merchantId: $array['merchantId'],
+            imageUri: $array['imageUri'],
+            languageCodes: $array['languageCodes'],
+            startDate: self::castDatetime($array['startDate']),
+            endDate: self::castDatetime($array['endDate']),
+            description: $array['description'],
+            countryCodes: $array['countryCodes'],
+            categoryIds: $array['categoryIds'],
+            createdAt: self::castDatetime($array['createdAt']),
+            updatedAt: self::castDatetime($array['updatedAt'])
+        );
     }
 }
