@@ -20,7 +20,7 @@ final class CouponDto extends Dto
      * @param string $trackingLink Affiliate link (RFC 3986)
      * @param string $name Coupon name
      * @param string|null $code Coupon code
-     * @param string $merchantId Merchant unique identifier
+     * @param int $merchantId Merchant unique identifier
      * @param string $imageUri URI to the coupon logo
      * @param array $languageCodes Array of languages supported by the website in ISO 639-1 alpha-2 format.
      *      If the value is empty, the coupon languages are unknown
@@ -38,7 +38,7 @@ final class CouponDto extends Dto
         public string $trackingLink,
         public string $name,
         public ?string $code,
-        public string $merchantId,
+        public int $merchantId,
         public string $imageUri,
         public array $languageCodes,
         public DateTimeInterface $startDate,
