@@ -66,7 +66,7 @@ final class CouponDto extends Dto
             imageUri: $array['imageUri'],
             languageCodes: $array['languageCodes'],
             startDate: self::castDatetime($array['startDate']),
-            endDate: self::castDatetime($array['endDate']),
+            endDate: is_null($array['endDate']) ? null : self::castDatetime($array['endDate']),
             description: $array['description'],
             countryCodes: $array['countryCodes'],
             categoryIds: $array['categoryIds'],
